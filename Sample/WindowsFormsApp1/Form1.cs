@@ -22,7 +22,17 @@ namespace WindowsFormsApp1 {
             textAns.Text = sum.ToString();
         }
 
+        private void btPow_Click(object sender, EventArgs e) {
+
+          double resul = Math.Pow((double)tx1.Value ,(double)tx2.Value);
+            textBox2.Text = resul.ToString();
+        }
+
         private void Form1_Load(object sender, EventArgs e) {
+
+        }
+
+        private void textAns_TextChanged(object sender, EventArgs e) {
 
         }
     }
