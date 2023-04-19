@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp0411", "Sample\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "Sample\WindowsFormsApp1\WindowsFormsApp1.csproj", "{AF5854CA-864D-4C1B-A40E-9B16B28E1E26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallApp", "Sample\BallApp\BallApp.csproj", "{4E954EE5-2CAA-4223-944E-51BBF981EFD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{AF5854CA-864D-4C1B-A40E-9B16B28E1E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF5854CA-864D-4C1B-A40E-9B16B28E1E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF5854CA-864D-4C1B-A40E-9B16B28E1E26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E954EE5-2CAA-4223-944E-51BBF981EFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E954EE5-2CAA-4223-944E-51BBF981EFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E954EE5-2CAA-4223-944E-51BBF981EFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E954EE5-2CAA-4223-944E-51BBF981EFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CC94E6CE-6697-4091-BED0-001937ADAF0C} = {7DCA37CF-B965-4553-A090-C81258B3F4A0}
 		{AF5854CA-864D-4C1B-A40E-9B16B28E1E26} = {7DCA37CF-B965-4553-A090-C81258B3F4A0}
+		{4E954EE5-2CAA-4223-944E-51BBF981EFD8} = {7DCA37CF-B965-4553-A090-C81258B3F4A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C74E5271-BC40-4121-BA10-C1E829E40ECD}
