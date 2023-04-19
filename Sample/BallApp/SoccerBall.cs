@@ -23,8 +23,8 @@ namespace BallApp {
             posX = xp;
             posY = yp;
            Random r1= new System.Random();
-            moveX = r1.Next(1,90);
-            moveY = r1.Next(1, 90);
+            moveX = r1.Next(-30, 30);
+            moveY = r1.Next(-30, 30);
 
         }
         //プロパティ
