@@ -6,45 +6,41 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BallApp {
-    class SoccerBall {
-        //フィールド
-        private Image image; //画像データ
+    class SoccerBall:Obj {
 
-        private double posX; //x座標
-        private double posY; //y座標
+
 
         private double moveX;//x座標
         private double moveY;//y座標
 
+        public double MoveX { get => moveX; set => moveX = value; }
+        public double MoveY { get => moveY; set => moveY = value; }
+
 
         //コンストラクター
-        public SoccerBall(double xp , double yp) {
-            Image = Image.FromFile(@"pic\soccer_ball.png");
-            posX = xp;
-            posY = yp;
+        public SoccerBall(double xp , double yp)
+            :base(xp,yp, @"pic\tennis_ball.png"){
+
            Random r1= new System.Random();
-            moveX = r1.Next(-30, 30);
-            moveY = r1.Next(-30, 30);
+            MoveX = r1.Next(-30, 30);
+            MoveY = r1.Next(-30, 30);
 
         }
-        //プロパティ
-        public double PosX { get => posX; set => posX = value; }
-        public double PosY { get => posY; set => posY = value; }
-        public Image Image { get => image; set => image = value; }
+ 
 
         //メソッド
-        public void Move() {
-            if (posY > 520 || posY < 0)
+        public override void Move() {
+            if (PosY > 520 || PosY < 0)
             {
-                moveY = -moveY;
+                MoveY = -MoveY;
             }
-            if (posX > 730 || posX < 0)
+            if (PosX > 730 || PosX < 0)
             {
-                moveX = -moveX;
+                MoveX = -MoveX;
             }
 
-            posX += moveX;
-            posY += moveY;
+            PosX += MoveX;
+            PosY += MoveY;
 
 
 
