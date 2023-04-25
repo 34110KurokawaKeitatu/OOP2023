@@ -57,7 +57,6 @@ namespace BallApp {
                 pb.Size = new Size(a, a);
                 pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
                 pb.Parent = this;//画像の登録
-                i = i + 1;
                 balls2.Add(tennisBall);
                 pbs2.Add(pb);
             }
@@ -72,12 +71,11 @@ namespace BallApp {
                 pb.Size = new Size(a, a);
                 pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
                 pb.Parent = this;//画像の登録
-                i = i + 1;
                 balls.Add(soccerBall);
                 pbs.Add(pb);
 
-
             }
+            i = i + 1;
             moveTimer.Start();//タイマースタート
 
         }
