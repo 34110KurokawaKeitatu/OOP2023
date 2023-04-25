@@ -52,11 +52,6 @@ namespace BallApp {
                 pb = new PictureBox();
                 pb.Image = tennisBall.Image;
                 pb.Location = new Point((int)tennisBall.PosX, (int)tennisBall.PosY); //画像の位置
-                Random r1 = new System.Random();
-                int a = r1.Next(20, 50);
-                pb.Size = new Size(a, a);
-                pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
-                pb.Parent = this;//画像の登録
                 balls2.Add(tennisBall);
                 pbs2.Add(pb);
             }
@@ -66,15 +61,15 @@ namespace BallApp {
                 pb = new PictureBox();
                 pb.Image = soccerBall.Image;
                 pb.Location = new Point((int)soccerBall.PosX, (int)soccerBall.PosY); //画像の位置
-                Random r1 = new System.Random();
-                int a = r1.Next(20, 50);
-                pb.Size = new Size(a, a);
-                pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
-                pb.Parent = this;//画像の登録
                 balls.Add(soccerBall);
                 pbs.Add(pb);
 
             }
+            Random r1 = new System.Random();
+            int a = r1.Next(20, 50);
+            pb.Size = new Size(a, a);
+            pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
+            pb.Parent = this;//画像の登録
             i = i + 1;
             moveTimer.Start();//タイマースタート
 
