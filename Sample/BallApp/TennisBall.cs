@@ -6,19 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BallApp {
-    class SoccerBall:Obj {
-
+    class TennisBall : Obj {
         //コンストラクター
-        public SoccerBall(double xp , double yp)
-            : base(xp,yp, @"pic\soccer_ball.png") {
+        public TennisBall(double xp, double yp)
+            : base(xp, yp, @"pic\tennis_ball.png") {
 
-           Random r1= new System.Random();
+            Random r1 = new System.Random();
             MoveX = r1.Next(-30, 30);
             MoveY = r1.Next(-30, 30);
 
+
         }
- 
-        //メソッド
+
         public override void Move() {
             if (PosY > 520 || PosY < 0)
             {
@@ -31,10 +30,6 @@ namespace BallApp {
 
             PosX += MoveX;
             PosY += MoveY;
-
-
-
-
         }
     }
 }
