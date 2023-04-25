@@ -13,10 +13,9 @@ namespace BallApp {
         private SoccerBall soccerBall;
         private TennisBall tennisBall;
         private PictureBox pb; //画像をコントロールする
-        private List<SoccerBall> balls = new List<SoccerBall>();//ボールインスタンス格納用
+        private List<Obj> balls = new List<Obj>();//ボールインスタンス格納用
         private List<PictureBox> pbs = new List<PictureBox>();//表示用
-        private List<TennisBall> balls2 = new List<TennisBall>();//ボールインスタンス格納用
-        private List<PictureBox> pbs2 = new List<PictureBox>();//表示用
+
 
         private int i = 0;
         static void Main(string[] args) {
@@ -52,8 +51,8 @@ namespace BallApp {
                 pb = new PictureBox();
                 pb.Image = tennisBall.Image;
                 pb.Location = new Point((int)tennisBall.PosX, (int)tennisBall.PosY); //画像の位置
-                balls2.Add(tennisBall);
-                pbs2.Add(pb);
+                balls.Add(tennisBall);
+                
             }
             if (e.Button == MouseButtons.Left)
             {
@@ -62,7 +61,7 @@ namespace BallApp {
                 pb.Image = soccerBall.Image;
                 pb.Location = new Point((int)soccerBall.PosX, (int)soccerBall.PosY); //画像の位置
                 balls.Add(soccerBall);
-                pbs.Add(pb);
+                
 
             }
             Random r1 = new System.Random();
@@ -70,6 +69,7 @@ namespace BallApp {
             pb.Size = new Size(a, a);
             pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
             pb.Parent = this;//画像の登録
+            pbs.Add(pb);
             i = i + 1;
             moveTimer.Start();//タイマースタート
 
@@ -81,12 +81,8 @@ namespace BallApp {
                 balls[i].Move(); //移動
                 pbs[i].Location = new Point((int)balls[i].PosX, (int)balls[i].PosY);
             }
-            for(int i = 0; i < balls2.Count; i++)
-            {
-                balls2[i].Move(); //移動
-                pbs2[i].Location = new Point((int)balls2[i].PosX, (int)balls2[i].PosY);
 
             }
         }
     }
-}
+
