@@ -29,21 +29,29 @@ namespace BallApp {
 
            // this.Width = 1920;//幅プロパティ
            // this.Height = 1080;//高さプロパティ]
-            this.Size = new Size(800, 600);
-            
-            this.BackColor = Color.Green;
+            this.Size = new Size(1920, 1080);
+
+            this.BackColor = Color.Black;
             this.Text = "BallGame";
+
             this.MouseClick += Program_MouseClick;
+            this.KeyDown += Program_KeyDown;
+
             
             moveTimer = new Timer();
             moveTimer.Interval = 1;//タイマーのインターバル（ｍｓ
             moveTimer.Tick += MoveTimer_Tick;//デリゲート登録
         }
 
+        private void Program_KeyDown(object sender, KeyEventArgs e) {
+      
+
+        }
+
         private void Program_MouseClick(object sender, MouseEventArgs e) {
             //ボールインスタンス生成
 
-            this.Text = "BallGame" + (i + 1);
+            
             if (e.Button == MouseButtons.Right)
             {
                 
@@ -61,16 +69,17 @@ namespace BallApp {
                 pb.Image = soccerBall.Image;
                 pb.Location = new Point((int)soccerBall.PosX, (int)soccerBall.PosY); //画像の位置
                 balls.Add(soccerBall);
-                
 
             }
             Random r1 = new System.Random();
             int a = r1.Next(20, 50);
-            pb.Size = new Size(a, a);
+            pb.Size = new Size(500, 500);
             pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
             pb.Parent = this;//画像の登録
             pbs.Add(pb);
             i = i + 1;
+
+            this.Text = "BallGame soccerball:" + SoccerBall.Count + " " + "tennisball:" + TennisBall.Count;
             moveTimer.Start();//タイマースタート
 
         }
