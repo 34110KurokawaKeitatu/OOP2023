@@ -9,10 +9,15 @@ using System.Windows.Forms;
 namespace BallApp {
     class Program :Form {
 
+        Bar bar;    //  barインスタンス格納
+        PictureBox pbBar; //Bar表示用
+
         private Timer moveTimer;
         private SoccerBall soccerBall;
         private TennisBall tennisBall;
         private PictureBox pb; //画像をコントロールする
+
+        //リストこれくしょうん
         private List<Obj> balls = new List<Obj>();//ボールインスタンス格納用
         private List<PictureBox> pbs = new List<PictureBox>();//表示用
 
@@ -27,8 +32,7 @@ namespace BallApp {
 
         public Program() {
 
-           // this.Width = 1920;//幅プロパティ
-           // this.Height = 1080;//高さプロパティ]
+            // this.Height = 1080;//高さプロパティ] this.Width = 1920;//幅プロパティ
             this.Size = new Size(1920, 1080);
 
             this.BackColor = Color.Black;
@@ -37,15 +41,24 @@ namespace BallApp {
             this.MouseClick += Program_MouseClick;
             this.KeyDown += Program_KeyDown;
 
+            // Bar インスタンス生成
+            bar = new Bar(0,0);
+            pbBar = new PictureBox();
+            pbBar.Image = bar.Image;
+            pbBar.Location = new Point((int)bar.PosX, (int)bar.PosY);
+            pbBar.Size = new Size(150, 10);
+            pbBar.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbBar.Parent = this;
             
             moveTimer = new Timer();
             moveTimer.Interval = 1;//タイマーのインターバル（ｍｓ
             moveTimer.Tick += MoveTimer_Tick;//デリゲート登録
+
         }
 
         private void Program_KeyDown(object sender, KeyEventArgs e) {
-      
-
+            bar.Move(e.KeyData);
+            pbBar.Location = new Point((int)bar.PosX, (int)bar.PosY);
         }
 
         private void Program_MouseClick(object sender, MouseEventArgs e) {
@@ -73,7 +86,7 @@ namespace BallApp {
             }
             Random r1 = new System.Random();
             int a = r1.Next(20, 50);
-            pb.Size = new Size(500, 500);
+            pb.Size = new Size(300, 300);
             pb.SizeMode = PictureBoxSizeMode.StretchImage; //画像を表示モード
             pb.Parent = this;//画像の登録
             pbs.Add(pb);

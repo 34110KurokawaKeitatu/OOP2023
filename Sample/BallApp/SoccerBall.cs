@@ -24,11 +24,11 @@ namespace BallApp {
  
         //メソッド
         public override void Move() {
-            if (PosY > 990 || PosY < 0)
+            if (PosY > 800 || PosY < -50)
             {
                 MoveY = -MoveY;
             }
-            if (PosX > 1700 || PosX < 0)
+            if (PosX > 1600 || PosX < -50)
             {
                 MoveX = -MoveX;
             }
