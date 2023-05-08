@@ -10,6 +10,8 @@ namespace ProductSample {
     class Program {
         static void Main(string[] args) {
 
+            #region　P26のサンプルプログラム
+#if false
             //インスタンスの生成
             Product unnko = new Product(123,
                 "かりんとう",180);
@@ -22,6 +24,24 @@ namespace ProductSample {
 
             Console.WriteLine("大福の価格の税込み価格：" + 
                 moti.GetPriceIncludingTax());
+#endif
+            #endregion
+
+            DateTime date = DateTime.Today;
+            string re = date.ToString("yyyy年MM月dd日");
+            //10日後を求める
+            DateTime daysAfter10 = date.AddDays(10);
+            DateTime daysbefor10 = date.AddDays(-10);
+
+
+
+
+            Console.WriteLine(date.ToString("yyyy年MM月dd日"));
+
+            Console.WriteLine("今日の10日後は" +daysAfter10.ToString("yyyy年MM月dd日"));
+
+            Console.WriteLine("今日の10日前は" + daysbefor10.ToString("yyyy年MM月dd日") );
+
         }
     }
 }
