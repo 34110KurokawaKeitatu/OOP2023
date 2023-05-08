@@ -27,6 +27,7 @@ namespace ProductSample {
 #endif
             #endregion
 
+            #region
             DateTime date = DateTime.Today;
             string re = date.ToString("yyyy年MM月dd日");
             //10日後を求める
@@ -41,6 +42,12 @@ namespace ProductSample {
             Console.WriteLine("今日の10日後は" +daysAfter10.ToString("yyyy年MM月dd日"));
 
             Console.WriteLine("今日の10日前は" + daysbefor10.ToString("yyyy年MM月dd日") );
+            #endregion
+
+            DateTime BD = new DateTime(2004,02,03);
+
+            DateTime total = date.Subtract(BD).TotalDays;
+
 
         }
     }
