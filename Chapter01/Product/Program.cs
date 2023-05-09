@@ -39,14 +39,25 @@ namespace ProductSample {
 
             Console.WriteLine(date.ToString("yyyy年MM月dd日"));
 
-            Console.WriteLine("今日の10日後は" +daysAfter10.ToString("yyyy年MM月dd日"));
+            Console.WriteLine("今日の10日後は" + daysAfter10.ToString("yyyy年MM月dd日"));
 
-            Console.WriteLine("今日の10日前は" + daysbefor10.ToString("yyyy年MM月dd日") );
+            Console.WriteLine("今日の10日前は" + daysbefor10.ToString("yyyy年MM月dd日"));
             #endregion
 
-            DateTime BD = new DateTime(2004,02,03);
+            Console.Write("西暦:");
+            int year = int.Parse(Console.ReadLine());
 
-            DateTime total = date.Subtract(BD).TotalDays;
+            Console.Write("月:");
+            int month = int.Parse(Console.ReadLine());
+
+            Console.Write("日:");
+            int day = int.Parse(Console.ReadLine());
+
+            DateTime BD = new DateTime(year, month, day);
+
+            TimeSpan total = date - BD;
+
+            Console.WriteLine("生まれてから" + total + "日目");
 
 
         }
