@@ -27,7 +27,7 @@ namespace ProductSample {
 #endif
             #endregion
 
-            #region
+            #region 過ぎ去りし時を求めて
             DateTime date = DateTime.Today;
             string re = date.ToString("yyyy年MM月dd日");
             //10日後を求める
@@ -44,6 +44,7 @@ namespace ProductSample {
             Console.WriteLine("今日の10日前は" + daysbefor10.ToString("yyyy年MM月dd日"));
             #endregion
 
+            #region 誕生日
             Console.Write("西暦:");
             int year = int.Parse(Console.ReadLine());
 
@@ -57,9 +58,13 @@ namespace ProductSample {
 
             TimeSpan total = date - BD;
 
-            Console.WriteLine("生まれてから" + total + "日目");
+            Console.WriteLine("生まれてから" + total.Days + "日目");
+            #endregion
 
-
+            #region　曜日
+            string days = BD.ToString("dddd");
+            Console.WriteLine("あなたの生まれた曜日は" + days);
+            #endregion
         }
     }
 }
