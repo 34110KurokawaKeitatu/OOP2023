@@ -8,6 +8,7 @@ namespace DistanceConverter {
     class Program {
         static void Main(string[] args) {
 
+            //
             if (args.Length >= 1 && args[0] == "-tom")
             {
                 //フィートからメートルへの対応表を出力        
