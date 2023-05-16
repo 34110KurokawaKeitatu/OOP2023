@@ -16,6 +16,5 @@ namespace SalesCalculator {
                 Console.WriteLine("{0} {1 :#,1}" , obj.Key, obj.Value);
             }
         }
-       
     }
 }
