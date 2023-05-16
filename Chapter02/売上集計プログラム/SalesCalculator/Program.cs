@@ -13,7 +13,7 @@ namespace SalesCalculator {
             Dictionary<string, int> amountPerStore = sales.GetPerStoreSales();
             foreach (KeyValuePair<string, int> obj in amountPerStore) 
             {
-                Console.WriteLine("{0} {1 : C}" , obj.Key, obj.Value);
+                Console.WriteLine("{0} {1 :#,1}" , obj.Key, obj.Value);
             }
         }
         //売上データを読み込み、Saleオブジェクトのリストを返す
