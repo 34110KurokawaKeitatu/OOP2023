@@ -29,7 +29,6 @@ namespace Exercise03 {
             }
             return dict;
 
-
         }
         public IDictionary<String, int> GetPerProductSales() {
             var dict = new SortedDictionary<string, int>();
