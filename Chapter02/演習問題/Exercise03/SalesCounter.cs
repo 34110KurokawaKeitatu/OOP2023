@@ -23,16 +23,28 @@ namespace Exercise03 {
             foreach (var sale in _sales)
             {
                 if (dict.ContainsKey(sale.ShopName))
-                    dict[sale.ProductCategory] +=  sale.Amount;
+                    dict[sale.ShopName] +=  sale.Amount;
                 else
-                    dict[sale.ProductCategory] = sale.Amount;
+                    dict[sale.ShopName] = sale.Amount;
             }
             return dict;
 
 
         }
-        //売上データを読み込み、Saleオブジェクトのリストを返す
-       public static IEnumerable<Sale> ReadSales(String filePath) {
+        public IDictionary<String, int> GetPerProductSales() {
+            var dict = new SortedDictionary<string, int>();
+            foreach (var sale in _sales)
+            {
+                if (dict.ContainsKey(sale.ProductCategory))
+                    dict[sale.ProductCategory] += sale.Amount;
+                else
+                    dict[sale.ProductCategory] = sale.Amount;
+            }
+            return dict;
+        }
+
+            //売上データを読み込み、Saleオブジェクトのリストを返す
+            public static IEnumerable<Sale> ReadSales(String filePath) {
             var sales = new List<Sale>();//売り上げデーターを格納する
             var lines = File.ReadAllLines(filePath);//ファイルからすべてのデータを読み込む
 
