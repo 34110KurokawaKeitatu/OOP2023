@@ -44,7 +44,12 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_3(List<string> names) {
-            var list = names.Where(n => n.Contains("o"));
+            var list = names.Where(n => n.Contains("o")).ToList();
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+
+            }
         }
 
         private static void Exercise2_4(List<string> names) {
