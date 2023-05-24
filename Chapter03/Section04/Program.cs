@@ -11,11 +11,20 @@ namespace Section04 {
                "Tokyo", "New Delhi", "Bangkok", "London", "Paris", "Berlin", "Canberra", "Hong Kong",
             };
             //IEnumerable<String> query = names.Where(s => s.Length <= 5).Select(s=>s.ToLower());
-            var query = names.Select(s => s.Length);
-            foreach(var s in query)
+            var query = names.Where(s => s.Length <= 5).ToList();
+            foreach(var item in query)
             {
-                Console.WriteLine(s);
+                Console.WriteLine(item);
             }
+            Console.WriteLine("----------------------------");
+
+            names[0] = "大阪";
+
+            foreach(var item in query)
+            {
+                Console.WriteLine(item);
+            }
+
         }
     }
 }
