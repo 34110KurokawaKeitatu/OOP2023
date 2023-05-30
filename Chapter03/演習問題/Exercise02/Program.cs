@@ -53,7 +53,7 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_4(List<string> names) {
-            var count = names.Where(n => n.Contains("B")).Select(s => s.Length );
+            var count = names.Where(n => n.Contains("B")).Select(s => s.Length);
             foreach (var item in count)
             {
                 Console.WriteLine(item);
