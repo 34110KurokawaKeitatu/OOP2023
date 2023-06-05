@@ -40,11 +40,16 @@ namespace Exercises03 {
         }
 
         private static void Exercise3_4(string text) {
-            throw new NotImplementedException();
+            var re = text.Split(' ').Where(s => s.Length <= 4);
+            foreach (var s in re)
+            {
+                Console.WriteLine(s);
+            }
+            
         }
 
         private static void Exercise3_5(string text) {
-            throw new NotImplementedException();
+       
         }
     }
 }
