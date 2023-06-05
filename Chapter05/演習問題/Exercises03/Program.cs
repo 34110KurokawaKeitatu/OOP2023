@@ -25,21 +25,12 @@ namespace Exercises03 {
         }
 
         private static void Exercise3_1(string text) {
-            Console.Write("入力：");
-            string moji = Console.ReadLine();
-            if (String.Compare(text,moji,true)==0)
-            {
-                Console.WriteLine("等しい");
-            }
-            else
-            {
-                Console.WriteLine("等しくない");
-            }
-
+            var count = text.Count(s => s == ' ');
+            Console.WriteLine(count);
         }
 
         private static void Exercise3_2(string text) {
-            throw new NotImplementedException();
+            
         }
 
         private static void Exercise3_3(string text) {
