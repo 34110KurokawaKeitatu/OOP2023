@@ -49,11 +49,13 @@ namespace Exercises03 {
         }
 
         private static void Exercise3_5(string text) {
-            var split = text.Split(' ').ToList();
-            StringBuilder builder = new StringBuilder();
-            foreach(var s in split)
+            var split = text.Split(' ').ToArray();
+            var builder = new StringBuilder(split[0]);
+            foreach(var s in split.Skip(1))
             {
-                builder.Append(s + ' ');
+                builder.Append(' ');
+                builder.Append(s);
+
             }
             var to = builder.ToString();
             Console.WriteLine(to);
