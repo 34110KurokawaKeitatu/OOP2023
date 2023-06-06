@@ -33,7 +33,7 @@ namespace Exercise04 {
 
                 }
             }
-            Console.WriteLine("実行時間 = {0}", sw.Elapsed.ToString(@"ss\.ffff")); ;
+            Console.WriteLine("実行時間 = {0}", sw.Elapsed.ToString(@"ss\.fffff")); ;
         }
     }
 }
