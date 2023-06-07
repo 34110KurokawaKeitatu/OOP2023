@@ -39,11 +39,15 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_3(int[] numbers) {
-            
+            var select = numbers.Select(s => s.ToString());
+            foreach (var item in select)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void Exercise1_4(int[] numbers) {
-            throw new NotImplementedException();
+            var oder3 = numbers.OrderBy();
         }
 
         private static void Exercise1_5(int[] numbers) {
