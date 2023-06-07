@@ -56,7 +56,8 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_5(int[] numbers) {
-            throw new NotImplementedException();
+            var count = numbers.Where(s => s == s).Count(s => s > 10);
+            Console.WriteLine(count);
         }
     }
 }
