@@ -47,7 +47,12 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_4(int[] numbers) {
-            var oder3 = numbers.OrderBy();
+            var oder3 = numbers.OrderBy(s=> s);
+            foreach (var item in oder3.Skip(0).Take(3))
+            {
+                Console.WriteLine(item);
+            }
+            
         }
 
         private static void Exercise1_5(int[] numbers) {
