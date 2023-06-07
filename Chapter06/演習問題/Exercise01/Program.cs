@@ -31,11 +31,15 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_2(int[] numbers) {
-            throw new NotImplementedException();
+            var last2 = numbers.Skip(numbers.Length - 2);
+            foreach (var item in last2)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void Exercise1_3(int[] numbers) {
-            throw new NotImplementedException();
+            
         }
 
         private static void Exercise1_4(int[] numbers) {
