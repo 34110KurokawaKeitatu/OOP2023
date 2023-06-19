@@ -41,31 +41,51 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_1(List<Book> books) {
-            throw new NotImplementedException();
+            var xbox = books.Where(s => s.Title.Contains("ワンダフル・C#ライフ"));
+            foreach (var item in xbox)
+            {
+                Console.WriteLine(item.Title,item.Price);
+            }
         }
 
         private static void Exercise2_2(List<Book> books) {
-            throw new NotImplementedException();
+            var xbox = books.Where(s => s.Title.Contains("C#")).Count();
+            Console.WriteLine("冊" + xbox);
         }
 
         private static void Exercise2_3(List<Book> books) {
-            throw new NotImplementedException();
+            var xbox = books.Where(s => s.Title.Contains("C#")).Average(s => s.Pages);
+            Console.WriteLine("ページ平均" + xbox);
         }
 
         private static void Exercise2_4(List<Book> books) {
-            throw new NotImplementedException();
+            var xbox = books.Where(s => s.Price >= 4000).Take(1);
+            foreach (var Ps5 in xbox)
+            {
+                Console.WriteLine(Ps5.Title);
+            }
+            
         }
 
         private static void Exercise2_5(List<Book> books) {
-            throw new NotImplementedException();
+            var xbox = books.Where(s => s.Price <= 4000);
+            Console.WriteLine(xbox.Max(s => s.Pages));
         }
 
         private static void Exercise2_6(List<Book> books) {
-            throw new NotImplementedException();
+            var xbox = books.Where(s => s.Pages >= 400).OrderBy(s => s.Title);
+            foreach (var Ps5 in xbox)
+            {
+                Console.WriteLine(Ps5.Title);
+            }
         }
 
         private static void Exercise2_7(List<Book> books) {
-            throw new NotImplementedException();
+            var xbox = books.Where(s => s.Title.Contains("C#") && s.Pages <= 400);
+            foreach (var Ps5 in xbox)
+            {
+                Console.WriteLine(Ps5.Title);
+            }
         }
     }
     class Book {
