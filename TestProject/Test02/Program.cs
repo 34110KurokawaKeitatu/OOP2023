@@ -43,8 +43,7 @@ namespace Test02 {
         //問題２　偶数の最大値を表示
         //　　　　出力結果【94】
         private static void Exercise02(List<int> numbers) {
-            var MaX = numbers.Where(s => s % 2 == 0).Max();
-            Console.WriteLine(MaX);
+            Console.WriteLine(numbers.Where(s => s % 2 == 0).Max());
 
         }
         //問題３　昇順に並べて表示（遅延実行とする）
