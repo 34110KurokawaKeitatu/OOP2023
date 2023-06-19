@@ -43,13 +43,13 @@ namespace Test01 {
             var dict = new SortedDictionary<string, int>();
             foreach(var score in _score)
             {
-                if (dict.ContainsKey(score.Name))
+                if (dict.ContainsKey(score.Subject))
                 {
-                    dict[score.Name] += score.Score;
+                    dict[score.Subject] += score.Score;
                 }
                 else
                 {
-                    dict[score.Name] = score.Score;
+                    dict[score.Subject] = score.Score;
                 }
                
             }
