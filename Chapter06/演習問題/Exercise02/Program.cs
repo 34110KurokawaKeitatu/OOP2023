@@ -76,7 +76,7 @@ namespace Exercise02 {
             var xbox = books.Where(s => s.Pages >= 400).OrderBy(s => s.Title);
             foreach (var Ps5 in xbox)
             {
-                Console.WriteLine(Ps5.Title);
+                Console.WriteLine(Ps5.Title + "　" + Ps5.Price + "円");
             }
         }
 
