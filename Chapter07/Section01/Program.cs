@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Section01 {
     class Program {
         static void Main(string[] args) {
-            var flowerDict = new Dictionary<string, string>()
+            var flowerDict = new Dictionary<string, CityInfo>()
             {
                 /*  ["sunflower"] = 400,
                   ["pansy"] = 300,
@@ -22,7 +22,7 @@ namespace Section01 {
 
             while (FlowerName != "999")
             {
-
+                var cityinfo = new CityInfo();
                 if (flowerDict.ContainsKey(FlowerName))
                 {
                     Console.WriteLine("重複しています");
@@ -31,17 +31,23 @@ namespace Section01 {
                     if (ans == "Y")
                     {
                         Console.Write("所在地の入力:");
-                        var FlowerPraice = Console.ReadLine();
-                        flowerDict[FlowerName] = FlowerPraice;
+                        cityinfo.City = Console.ReadLine();
+                        Console.Write("人口の入力:");
+                        cityinfo.Population = int.Parse(Console.ReadLine());
+                        flowerDict[FlowerName] = cityinfo;
+                        Console.WriteLine("上書きしました");
                     }
 
                 }
                 else
                 {
                     Console.Write("所在地の入力:");
-                    var FlowerPraice = Console.ReadLine();
-                    flowerDict[FlowerName] = FlowerPraice;
+                    cityinfo.City = Console.ReadLine();
+                    Console.Write("人口の入力:");
+                    cityinfo.Population = int.Parse(Console.ReadLine());
+                    flowerDict[FlowerName] = cityinfo;
                 }
+
                 Console.Write("県名を入力:");
                 FlowerName = Console.ReadLine();
 
@@ -51,27 +57,29 @@ namespace Section01 {
 
             if (num == 1)
             {
-                foreach (var item in flowerDict)
+                var kurokawwwwwa = flowerDict.OrderByDescending(s => s.Value.Population);
+                foreach (var item in kurokawwwwwa)
                 {
-                    Console.WriteLine(item);
+                    Console.WriteLine("{0}【{1}(人口：{2}人)】",item.Key,item.Value.City,item.Value.Population);
                 }
             }
             else
             {
                 Console.Write("松本を入力:");
                 FlowerName = Console.ReadLine();
-                Console.WriteLine(FlowerName + "({0})", flowerDict[FlowerName]);
+                Console.WriteLine(FlowerName + "({0}){1}", flowerDict[FlowerName].City,
+                    flowerDict[FlowerName].Population);
             }
         }
         class CityInfo {
-            string City { get; set; }
-            int Population { get; set; }
+            public string City { get; set; }//都市
+            public int Population { get; set; }//人口
         };
             
 
          //   Console.WriteLine("ひまわりの価格は{0}円です。",flowerDict["sunflower"]);
            // Console.WriteLine("チューリップの価格は{0}円です。",flowerDict["tulip"] );
 
-        }
     }
+}
 
