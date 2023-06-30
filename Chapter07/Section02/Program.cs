@@ -7,78 +7,67 @@ using System.Threading.Tasks;
 namespace Section02 {
     class Program {
         static void Main(string[] args) {
-            var flowerDict = new Dictionary<string, CityInfo>()
+            var prefDict = new Dictionary<string, List<CityInfo>>();
+            string pref, city;
+            int population;
+
+            Console.WriteLine("都市の登録");
+            while (true)
             {
-                /*  ["sunflower"] = 400,
-                  ["pansy"] = 300,
-                  ["tulip"] = 350,
-                  ["rose"] = 500,
-                  ["dahlia"] = 450, */
-            };
+                Console.Write("県名：");
+                pref = Console.ReadLine();
+                if (pref == "999") break;
 
-            //          flowerDict["morning glory"] = 250;
-            Console.Write("県名を入力:");
-            var FlowerName = Console.ReadLine();
+                Console.Write("市町村：");
+                city = Console.ReadLine();
 
-            while (FlowerName != "999")
-            {
-                var cityinfo = new CityInfo();
-                if (flowerDict.ContainsKey(FlowerName))
+                Console.Write("人口：");
+                population = int.Parse(Console.ReadLine());
+
+                //市町村情報インスタンスの生成
+                var cityInfo = new CityInfo
                 {
-                    Console.WriteLine("重複しています");
-                    Console.Write("上書きしますか　Y/N：");
-                    var ans = Console.ReadLine();
-                    if (ans == "Y")
-                    {
-                        Console.Write("所在地の入力:");
-                        cityinfo.City = Console.ReadLine();
-                        Console.Write("人口の入力:");
-                        cityinfo.Population = int.Parse(Console.ReadLine());
-                        flowerDict[FlowerName] = cityinfo;
-                        Console.WriteLine("上書きしました");
-                    }
+                    City = city,
+                    Population = population,
+                };
 
-                }
-                else
+                if (!prefDict.ContainsKey(pref))
                 {
-                    Console.Write("所在地の入力:");
-                    cityinfo.City = Console.ReadLine();
-                    Console.Write("人口の入力:");
-                    cityinfo.Population = int.Parse(Console.ReadLine());
-                    flowerDict[FlowerName] = cityinfo;
+                    prefDict[pref] = new List<CityInfo>(); //既に県名が未登録ならリスト作成
                 }
-
-                Console.Write("県名を入力:");
-                FlowerName = Console.ReadLine();
-
+                prefDict[pref].Add(cityInfo);
             }
-            Console.Write("1:一覧表示,2:県名指定 :");
-            var num = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("1:一覧表示,2:県名指定");
+            Console.Write(">");
+            var selected = Console.ReadLine();
 
-            if (num == 1)
+            if (selected == "1")
             {
-                var kurokawwwwwa = flowerDict.OrderByDescending(s => s.Value.Population);
-                foreach (var item in kurokawwwwwa)
+                //一覧表示
+                foreach (var prefData in prefDict)
                 {
-                    Console.WriteLine("{0}【{1}(人口：{2}人)】",item.Key,item.Value.City,item.Value.Population);
+                    foreach (var cityData in prefData.Value)
+                    {
+                        Console.WriteLine("{0}【{1}(人口：{2}人)】", prefData.Key, cityData.City, cityData.Population);
+                    }
                 }
             }
             else
             {
-                Console.Write("松本を入力:");
-                FlowerName = Console.ReadLine();
-                Console.WriteLine(FlowerName + "({0}){1}", flowerDict[FlowerName].City,
-                    flowerDict[FlowerName].Population);
+                //県名指定表示
+                Console.Write("県名を入力：");
+                var inputPref = Console.ReadLine();
+                foreach (var cityData in prefDict[inputPref])
+                {
+                    Console.WriteLine("{0}【{1}(人口：{2}人)】", inputPref, cityData.City, cityData.Population);
+                }
             }
         }
-        class CityInfo {
-            public string City { get; set; }//都市
-            public int Population { get; set; }//人口
-        };
-            
-
-         //   Console.WriteLine("ひまわりの価格は{0}円です。",flowerDict["sunflower"]);
-           // Console.WriteLine("チューリップの価格は{0}円です。",flowerDict["tulip"] );
-
     }
+}
+
+class CityInfo {
+    public string City { get; set; }        //都市
+    public int Population { get; set; }     //人口
 }
