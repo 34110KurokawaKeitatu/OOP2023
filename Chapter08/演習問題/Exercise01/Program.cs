@@ -36,15 +36,6 @@ namespace Exercise01 {
         }
 
         private static void DisplayDatePattern3_2(DateTime dateTime) {
-            var next = dateTime.AddDays(+10);
-            Console.WriteLine(dateTime.AddDays(+10));
-
-            
-            foreach (var dayofweek in Enum.GetValues(typeof(DayOfWeek)))
-            {
-                Console.WriteLine(dateTime.AddDays(+10));
-                Console.WriteLine(dayofweek);
-                i
             }
         }
     }
