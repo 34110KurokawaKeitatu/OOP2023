@@ -17,6 +17,11 @@ namespace CarReportSystem {
             InitializeComponent();
             dgvCarReports.DataSource = CarReports;
             dgvCarReports.Columns[5].Visible = false;
+            foreach (var item in gbMaker.Controls)
+            {
+
+                ((RadioButton)item).Checked = false;
+            }
             Falsebt();
             tsInfoText.Text = "ここにメッセージを表示できます";
 
@@ -80,8 +85,14 @@ namespace CarReportSystem {
                 Report = tbRP.Text,
                 CarImage = pbCarImage.Image,
             };
-            cbAuthor.Items.Add(cbAuthor.Text);
-            cbCarName.Items.Add(cbCarName.Text);
+            if (!cbAuthor.Items.Contains(cbAuthor.Text))
+            {
+                cbAuthor.Items.Add(cbAuthor.Text);
+            }
+            if (!cbCarName.Items.Contains(cbCarName.Text))
+            {
+                cbCarName.Items.Add(cbCarName.Text);
+            }
             CarReports.Add(carReport);
             Clear();
             Falsebt();
@@ -212,6 +223,13 @@ namespace CarReportSystem {
 
            
         }
+
+        private void 背景の色変更ToolStripMenuItem_Click(object sender, EventArgs e) {
+            cdColor.ShowDialog();
+            this.BackColor  = cdColor.Color;
+
+        }
     }
 }
+
 

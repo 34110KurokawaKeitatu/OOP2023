@@ -56,7 +56,7 @@ namespace CarReportSystem {
             this.保存CtrlSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.バージョン情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.背景の色変更ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプHToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョン情報ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -383,16 +383,17 @@ namespace CarReportSystem {
             // ヘルプHToolStripMenuItem
             // 
             this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.バージョン情報ToolStripMenuItem});
+            this.背景の色変更ToolStripMenuItem});
             this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
             this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.ヘルプHToolStripMenuItem.Text = "編集&(F)";
             // 
-            // バージョン情報ToolStripMenuItem
+            // 背景の色変更ToolStripMenuItem
             // 
-            this.バージョン情報ToolStripMenuItem.Name = "バージョン情報ToolStripMenuItem";
-            this.バージョン情報ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.バージョン情報ToolStripMenuItem.Text = "バージョン情報";
+            this.背景の色変更ToolStripMenuItem.Name = "背景の色変更ToolStripMenuItem";
+            this.背景の色変更ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.背景の色変更ToolStripMenuItem.Text = "背景の色変更";
+            this.背景の色変更ToolStripMenuItem.Click += new System.EventHandler(this.背景の色変更ToolStripMenuItem_Click);
             // 
             // ヘルプHToolStripMenuItem1
             // 
@@ -520,7 +521,7 @@ namespace CarReportSystem {
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tsInfoText;
         private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem バージョン情報ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 背景の色変更ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem バージョン情報ToolStripMenuItem1;
         private System.Windows.Forms.ColorDialog cdColor;
