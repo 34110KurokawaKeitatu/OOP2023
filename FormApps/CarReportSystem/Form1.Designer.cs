@@ -64,6 +64,7 @@ namespace CarReportSystem {
             this.tsInfoText = new System.Windows.Forms.ToolStripStatusLabel();
             this.pbCarImage = new System.Windows.Forms.PictureBox();
             this.cdColor = new System.Windows.Forms.ColorDialog();
+            this.btScaleChange = new System.Windows.Forms.Button();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -391,7 +392,7 @@ namespace CarReportSystem {
             // 背景の色変更ToolStripMenuItem
             // 
             this.背景の色変更ToolStripMenuItem.Name = "背景の色変更ToolStripMenuItem";
-            this.背景の色変更ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.背景の色変更ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.背景の色変更ToolStripMenuItem.Text = "背景の色変更";
             this.背景の色変更ToolStripMenuItem.Click += new System.EventHandler(this.背景の色変更ToolStripMenuItem_Click);
             // 
@@ -441,12 +442,23 @@ namespace CarReportSystem {
             this.pbCarImage.TabIndex = 15;
             this.pbCarImage.TabStop = false;
             // 
+            // btScaleChange
+            // 
+            this.btScaleChange.Location = new System.Drawing.Point(555, 39);
+            this.btScaleChange.Name = "btScaleChange";
+            this.btScaleChange.Size = new System.Drawing.Size(75, 20);
+            this.btScaleChange.TabIndex = 24;
+            this.btScaleChange.Text = "カーレポート管理システム";
+            this.btScaleChange.UseVisualStyleBackColor = true;
+            this.btScaleChange.Click += new System.EventHandler(this.btScaleChange_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(800, 534);
+            this.Controls.Add(this.btScaleChange);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btImageDeleteReport);
             this.Controls.Add(this.btModyfiReport);
@@ -525,6 +537,7 @@ namespace CarReportSystem {
         private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem バージョン情報ToolStripMenuItem1;
         private System.Windows.Forms.ColorDialog cdColor;
+        private System.Windows.Forms.Button btScaleChange;
     }
 }
 

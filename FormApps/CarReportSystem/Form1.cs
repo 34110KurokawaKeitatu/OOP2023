@@ -12,6 +12,7 @@ namespace CarReportSystem {
     public partial class Form1 : Form {
         //管理用のデータ
         BindingList<CarReport> CarReports = new BindingList<CarReport>();
+        private uint mode;
 
         public Form1() {
             InitializeComponent();
@@ -228,6 +229,13 @@ namespace CarReportSystem {
             cdColor.ShowDialog();
             this.BackColor  = cdColor.Color;
 
+        }
+
+        private void btScaleChange_Click(object sender, EventArgs e) {
+            
+            mode = mode < 4 ? ++mode : 0;
+
+            pbCarImage.SizeMode = (PictureBoxSizeMode)mode;
         }
     }
 }
