@@ -297,7 +297,7 @@ namespace CarReportSystem {
             // btDeleteReport
             // 
             this.btDeleteReport.BackColor = System.Drawing.Color.Silver;
-            this.btDeleteReport.Location = new System.Drawing.Point(555, 285);
+            this.btDeleteReport.Location = new System.Drawing.Point(555, 39);
             this.btDeleteReport.Name = "btDeleteReport";
             this.btDeleteReport.Size = new System.Drawing.Size(75, 23);
             this.btDeleteReport.TabIndex = 14;
@@ -444,11 +444,11 @@ namespace CarReportSystem {
             // 
             // btScaleChange
             // 
-            this.btScaleChange.Location = new System.Drawing.Point(555, 39);
+            this.btScaleChange.Location = new System.Drawing.Point(636, 40);
             this.btScaleChange.Name = "btScaleChange";
             this.btScaleChange.Size = new System.Drawing.Size(75, 20);
             this.btScaleChange.TabIndex = 24;
-            this.btScaleChange.Text = "カーレポート管理システム";
+            this.btScaleChange.Text = "サイズ変更";
             this.btScaleChange.UseVisualStyleBackColor = true;
             this.btScaleChange.Click += new System.EventHandler(this.btScaleChange_Click);
             // 

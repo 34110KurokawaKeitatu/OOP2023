@@ -233,10 +233,12 @@ namespace CarReportSystem {
 
         private void btScaleChange_Click(object sender, EventArgs e) {
             
-            mode = mode < 4 ? ++mode : 0;
+            mode = mode < 4 ?((mode == 1) ?3 : ++mode) : 0;//AutoSize(2)を除外
 
             pbCarImage.SizeMode = (PictureBoxSizeMode)mode;
         }
+
+ 
     }
 }
 
