@@ -31,6 +31,7 @@ namespace CarReportSystem {
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Red;
             this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBox1.Location = new System.Drawing.Point(34, 39);
             this.textBox1.Multiline = true;
@@ -53,6 +54,7 @@ namespace CarReportSystem {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(239, 142);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);

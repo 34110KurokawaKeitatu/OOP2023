@@ -136,7 +136,7 @@ namespace CarReportSystem {
             this.rbAUDI.Location = new System.Drawing.Point(7, 57);
             this.rbAUDI.Name = "rbAUDI";
             this.rbAUDI.Size = new System.Drawing.Size(50, 16);
-            this.rbAUDI.TabIndex = 6;
+            this.rbAUDI.TabIndex = 7;
             this.rbAUDI.TabStop = true;
             this.rbAUDI.Tag = "6";
             this.rbAUDI.Text = "AUDI";
@@ -148,7 +148,7 @@ namespace CarReportSystem {
             this.rbBMW.Location = new System.Drawing.Point(153, 35);
             this.rbBMW.Name = "rbBMW";
             this.rbBMW.Size = new System.Drawing.Size(49, 16);
-            this.rbBMW.TabIndex = 5;
+            this.rbBMW.TabIndex = 6;
             this.rbBMW.TabStop = true;
             this.rbBMW.Tag = "5";
             this.rbBMW.Text = "BMW";
@@ -160,7 +160,7 @@ namespace CarReportSystem {
             this.rbSUBARU.Location = new System.Drawing.Point(82, 35);
             this.rbSUBARU.Name = "rbSUBARU";
             this.rbSUBARU.Size = new System.Drawing.Size(70, 16);
-            this.rbSUBARU.TabIndex = 4;
+            this.rbSUBARU.TabIndex = 5;
             this.rbSUBARU.TabStop = true;
             this.rbSUBARU.Tag = "4";
             this.rbSUBARU.Text = "SUBARU";
@@ -172,7 +172,7 @@ namespace CarReportSystem {
             this.rbSUZUKI.Location = new System.Drawing.Point(7, 34);
             this.rbSUZUKI.Name = "rbSUZUKI";
             this.rbSUZUKI.Size = new System.Drawing.Size(63, 16);
-            this.rbSUZUKI.TabIndex = 3;
+            this.rbSUZUKI.TabIndex = 4;
             this.rbSUZUKI.TabStop = true;
             this.rbSUZUKI.Tag = "3";
             this.rbSUZUKI.Text = "SUZUKI";
@@ -184,7 +184,7 @@ namespace CarReportSystem {
             this.rbMAZDA.Location = new System.Drawing.Point(153, 12);
             this.rbMAZDA.Name = "rbMAZDA";
             this.rbMAZDA.Size = new System.Drawing.Size(63, 16);
-            this.rbMAZDA.TabIndex = 2;
+            this.rbMAZDA.TabIndex = 3;
             this.rbMAZDA.TabStop = true;
             this.rbMAZDA.Tag = "2";
             this.rbMAZDA.Text = "MAZDA";
@@ -196,7 +196,7 @@ namespace CarReportSystem {
             this.rbNISSAN.Location = new System.Drawing.Point(82, 12);
             this.rbNISSAN.Name = "rbNISSAN";
             this.rbNISSAN.Size = new System.Drawing.Size(64, 16);
-            this.rbNISSAN.TabIndex = 1;
+            this.rbNISSAN.TabIndex = 2;
             this.rbNISSAN.TabStop = true;
             this.rbNISSAN.Tag = "1";
             this.rbNISSAN.Text = "NISSAN";
@@ -209,7 +209,7 @@ namespace CarReportSystem {
             this.rbTOYOTA.Location = new System.Drawing.Point(7, 12);
             this.rbTOYOTA.Name = "rbTOYOTA";
             this.rbTOYOTA.Size = new System.Drawing.Size(68, 16);
-            this.rbTOYOTA.TabIndex = 0;
+            this.rbTOYOTA.TabIndex = 1;
             this.rbTOYOTA.TabStop = true;
             this.rbTOYOTA.Tag = "0";
             this.rbTOYOTA.Text = "TOYOTA";
@@ -262,7 +262,7 @@ namespace CarReportSystem {
             this.dgvCarReports.RowTemplate.Height = 21;
             this.dgvCarReports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCarReports.Size = new System.Drawing.Size(678, 181);
-            this.dgvCarReports.TabIndex = 10;
+            this.dgvCarReports.TabIndex = 0;
             this.dgvCarReports.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarReports_CellContentClick);
             // 
             // label5
@@ -300,7 +300,7 @@ namespace CarReportSystem {
             this.btDeleteReport.Location = new System.Drawing.Point(555, 39);
             this.btDeleteReport.Name = "btDeleteReport";
             this.btDeleteReport.Size = new System.Drawing.Size(75, 23);
-            this.btDeleteReport.TabIndex = 14;
+            this.btDeleteReport.TabIndex = 15;
             this.btDeleteReport.Text = "削除";
             this.btDeleteReport.UseVisualStyleBackColor = false;
             this.btDeleteReport.Click += new System.EventHandler(this.btDeleteReport_Click);
@@ -311,7 +311,7 @@ namespace CarReportSystem {
             this.btAddReport.Location = new System.Drawing.Point(393, 285);
             this.btAddReport.Name = "btAddReport";
             this.btAddReport.Size = new System.Drawing.Size(75, 23);
-            this.btAddReport.TabIndex = 16;
+            this.btAddReport.TabIndex = 17;
             this.btAddReport.Text = "追加";
             this.btAddReport.UseVisualStyleBackColor = false;
             this.btAddReport.Click += new System.EventHandler(this.btAddReport_Click);
@@ -322,7 +322,7 @@ namespace CarReportSystem {
             this.btModyfiReport.Location = new System.Drawing.Point(474, 37);
             this.btModyfiReport.Name = "btModyfiReport";
             this.btModyfiReport.Size = new System.Drawing.Size(75, 23);
-            this.btModyfiReport.TabIndex = 17;
+            this.btModyfiReport.TabIndex = 14;
             this.btModyfiReport.Text = "修正";
             this.btModyfiReport.UseVisualStyleBackColor = false;
             this.btModyfiReport.Click += new System.EventHandler(this.btModyfiReport_Click);
@@ -447,7 +447,7 @@ namespace CarReportSystem {
             this.btScaleChange.Location = new System.Drawing.Point(636, 40);
             this.btScaleChange.Name = "btScaleChange";
             this.btScaleChange.Size = new System.Drawing.Size(75, 20);
-            this.btScaleChange.TabIndex = 24;
+            this.btScaleChange.TabIndex = 16;
             this.btScaleChange.Text = "サイズ変更";
             this.btScaleChange.UseVisualStyleBackColor = true;
             this.btScaleChange.Click += new System.EventHandler(this.btScaleChange_Click);
@@ -483,6 +483,8 @@ namespace CarReportSystem {
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "カーレポート管理システム";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gbMaker.ResumeLayout(false);
             this.gbMaker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).EndInit();

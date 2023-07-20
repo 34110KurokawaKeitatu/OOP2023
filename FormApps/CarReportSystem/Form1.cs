@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
         //管理用のデータ
         BindingList<CarReport> CarReports = new BindingList<CarReport>();
         private uint mode;
+        //設定情報保存用オブジェクト
+        Settings settigs = new Settings();
+             
 
         public Form1() {
+            //設置ファイルを逆シリアル化して設定
+            
             InitializeComponent();
             dgvCarReports.DataSource = CarReports;
             dgvCarReports.Columns[5].Visible = false;
@@ -25,8 +32,8 @@ namespace CarReportSystem {
             }
             Falsebt();
             tsInfoText.Text = "ここにメッセージを表示できます";
+           
 
-            
         }
 
 
@@ -226,8 +233,13 @@ namespace CarReportSystem {
         }
 
         private void 背景の色変更ToolStripMenuItem_Click(object sender, EventArgs e) {
-            cdColor.ShowDialog();
-            this.BackColor  = cdColor.Color;
+
+            if (cdColor.ShowDialog() == DialogResult.OK)
+            {
+                BackColor = cdColor.Color;
+                settigs.MainFormColor = cdColor.Color.ToArgb();
+
+            }
 
         }
 
@@ -238,7 +250,23 @@ namespace CarReportSystem {
             pbCarImage.SizeMode = (PictureBoxSizeMode)mode;
         }
 
- 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+            //設定ファイルシリアル化
+            using(var writer = XmlWriter.Create("settings.xml"))
+            {
+                var serializer = new XmlSerializer(settigs.MainFormColor.GetType());
+                serializer.Serialize(writer,settigs.MainFormColor);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            using (var writer = XmlReader.Create("settings.xml"))
+            {
+                var serializer = new XmlSerializer(typeof(Settings));
+                settigs = serializer.Deserialize(writer) as Settings;
+                BackColor = Color.FromArgb(settigs.MainFormColor);
+            }
+        }
     }
 }
 
