@@ -68,6 +68,8 @@ namespace CarReportSystem {
             this.btScaleChange = new System.Windows.Forms.Button();
             this.tsTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.tmTimeUpdate = new System.Windows.Forms.Timer(this.components);
+            this.ofdCarRepoOpen = new System.Windows.Forms.OpenFileDialog();
+            this.sfdCarRepoSave = new System.Windows.Forms.SaveFileDialog();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -367,21 +369,23 @@ namespace CarReportSystem {
             // 
             this.開くToolStripMenuItem.Name = "開くToolStripMenuItem";
             this.開くToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.開くToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.開くToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.開くToolStripMenuItem.Text = "開く...<&O>";
+            this.開くToolStripMenuItem.Click += new System.EventHandler(this.開くToolStripMenuItem_Click);
             // 
             // 保存CtrlSToolStripMenuItem
             // 
             this.保存CtrlSToolStripMenuItem.Name = "保存CtrlSToolStripMenuItem";
             this.保存CtrlSToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.保存CtrlSToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.保存CtrlSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.保存CtrlSToolStripMenuItem.Text = "保存...<S>";
+            this.保存CtrlSToolStripMenuItem.Click += new System.EventHandler(this.保存CtrlSToolStripMenuItem_Click);
             // 
             // 終了XToolStripMenuItem
             // 
             this.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem";
             this.終了XToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.終了XToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.終了XToolStripMenuItem.Text = "終了(&X)";
             // 
             // ヘルプHToolStripMenuItem
@@ -465,6 +469,10 @@ namespace CarReportSystem {
             // tmTimeUpdate
             // 
             this.tmTimeUpdate.Tick += new System.EventHandler(this.tmTimeUpdate_Tick);
+            // 
+            // ofdCarRepoOpen
+            // 
+            this.ofdCarRepoOpen.FileName = "openFileDialog2";
             // 
             // Form1
             // 
@@ -556,6 +564,8 @@ namespace CarReportSystem {
         private System.Windows.Forms.Button btScaleChange;
         private System.Windows.Forms.ToolStripStatusLabel tsTime;
         private System.Windows.Forms.Timer tmTimeUpdate;
+        private System.Windows.Forms.OpenFileDialog ofdCarRepoOpen;
+        private System.Windows.Forms.SaveFileDialog sfdCarRepoSave;
     }
 }
 
