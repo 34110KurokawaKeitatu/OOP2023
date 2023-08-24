@@ -260,12 +260,21 @@ namespace CarReportSystem {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            using (var writer = XmlReader.Create("settings.xml"))
+            tsInfoText.Text = "";
+            tsTime.Text = DateTime.Now.ToString("HH時mm分ss秒");
+            tmTimeUpdate.Start();
+
+
+            using (var writer = XmlReader.Create("bColor.xml"))
             {
                 var serializer = new XmlSerializer(typeof(Settings));
                 settigs = serializer.Deserialize(writer) as Settings;
                 BackColor = Color.FromArgb(settigs.MainFormColor);
             }
+        }
+
+        private void tmTimeUpdate_Tick(object sender, EventArgs e) {
+            tsTime.Text = DateTime.Now.ToString("HH時mm分ss秒");
         }
     }
 }
