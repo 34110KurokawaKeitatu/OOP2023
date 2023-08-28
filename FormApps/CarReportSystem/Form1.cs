@@ -252,10 +252,16 @@ namespace CarReportSystem {
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
             //設定ファイルシリアル化
-            using(var writer = XmlWriter.Create("settings.xml"))
+            try
             {
-                var serializer = new XmlSerializer(settigs.MainFormColor.GetType());
-                serializer.Serialize(writer,settigs.MainFormColor);
+                using (var writer = XmlWriter.Create("settings.xml"))
+                {
+                    var serializer = new XmlSerializer(settigs.MainFormColor.GetType());
+                    serializer.Serialize(writer, settigs.MainFormColor);
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message +  "設定ファイル読み込み失敗");
             }
         }
 
