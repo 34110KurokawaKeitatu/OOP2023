@@ -315,19 +315,19 @@ namespace CarReportSystem {
                         dgvCarReports.DataSource = null;
                         dgvCarReports.DataSource = CarReports;
 
-                        foreach (var s in CarReports)
+                        cbAuthor.Items.Clear();
+                        cbCarName.Items.Clear();
+
+                        foreach (var s in CarReports.Select(p => p.Author))
                         {
-                            if (!cbAuthor.Items.Contains(cbAuthor.Text))
-                            {
-                                cbAuthor.Items.Add(s.Author);
-                            }
-                            if (!cbCarName.Items.Contains(cbCarName.Text))
-                            {
-                                cbCarName.Items.Add(s.CarName);
-                            }
+                                cbAuthor.Items.Add(s);
                         }
-                        dgvCarReports.ClearSelection();
+                        foreach(var t in CarReports.Select(p => p.CarName))
+                        {
+                                cbCarName.Items.Add(t);
+                        }
                     }
+                        dgvCarReports.ClearSelection();
                 }catch (Exception ex)
                 {
 
