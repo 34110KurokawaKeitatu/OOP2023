@@ -191,13 +191,7 @@ namespace CarReportSystem {
 
         private void dgvCarReports_CellContentClick(object sender, DataGridViewCellEventArgs e) {
 
-            Truebt();
-            dtpDate.Text = dgvCarReports.CurrentRow.Cells[0].Value.ToString();
-            cbAuthor.Text = dgvCarReports.CurrentRow.Cells[1].Value.ToString();
-            cbCarName.Text = dgvCarReports.CurrentRow.Cells[3].Value.ToString();
-            setSelectedMaker((CarReport.MakerGroup)dgvCarReports.CurrentRow.Cells[2].Value);
-            tbRP.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
-            pbCarImage.Image = (Image)dgvCarReports.CurrentRow.Cells[5].Value;
+           
         }
 
         public void Clear() {
@@ -272,6 +266,7 @@ namespace CarReportSystem {
             tsTime.Text = DateTime.Now.ToString("HH時mm分ss秒");
             tmTimeUpdate.Start();
 
+            dgvCarReports.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
 
             using (var writer = XmlReader.Create("bColor.xml"))
             {
@@ -333,6 +328,16 @@ namespace CarReportSystem {
 
                 }
             }
+        }
+
+        private void dgvCarReports_CellClick(object sender, DataGridViewCellEventArgs e) {
+            Truebt();
+            dtpDate.Text = dgvCarReports.CurrentRow.Cells[0].Value.ToString();
+            cbAuthor.Text = dgvCarReports.CurrentRow.Cells[1].Value.ToString();
+            cbCarName.Text = dgvCarReports.CurrentRow.Cells[3].Value.ToString();
+            setSelectedMaker((CarReport.MakerGroup)dgvCarReports.CurrentRow.Cells[2].Value);
+            tbRP.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
+            pbCarImage.Image = (Image)dgvCarReports.CurrentRow.Cells[5].Value;
         }
     }
 }
