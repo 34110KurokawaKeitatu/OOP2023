@@ -18,7 +18,7 @@ namespace CarReportSystem {
         BindingList<CarReport> CarReports = new BindingList<CarReport>();
         private uint mode;
         //設定情報保存用オブジェクト
-        Settings settigs = new Settings();
+        Settings settigs = Settings.getInstance();
 
 
         public Form1() {
@@ -371,6 +371,10 @@ namespace CarReportSystem {
 
             // TODO: このコード行はデータを 'infosys202313DataSet.CarReportTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableTableAdapter.Fill(this.infosys202313DataSet.CarReportTable);
+        }
+
+        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e) {
+
         }
     }
 }
