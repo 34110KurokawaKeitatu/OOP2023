@@ -25,7 +25,7 @@ namespace Exercise02 {
                 return novelist;
             }
         }
-        private static void Exercise2_2(Novelist novelist,string v) {
+        private static void Exercise2_2(Novelist novelist, string v) {
             using (var stream = new FileStream(v, FileMode.Create, FileAccess.Write))
             {
                 var serializer = new DataContractJsonSerializer(novelist.GetType(),
@@ -35,5 +35,7 @@ namespace Exercise02 {
                                      });
                 serializer.WriteObject(stream, novelist);
             }
+        }
     }
 }
+
