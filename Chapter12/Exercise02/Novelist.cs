@@ -18,9 +18,9 @@ namespace Exercise02 {
         [DataMember(Name = "birth")]
         public DateTime Birth { get; set; }
 
-        [XmlArrayItem("masterpieces")]
-        [XmlArrayItem("titel", typeof(string))]
-        [DataMember(Name = "mmasterpieces")]
+        [XmlArray("masterpieces")]
+        [XmlArrayItem("title", typeof(string))]
+        [DataMember(Name = "masterpieces")]
         public string[] Masterpieces { get; set; }
     }
 }
