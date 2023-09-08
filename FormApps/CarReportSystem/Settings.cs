@@ -22,7 +22,7 @@ namespace CarReportSystem {
                 instance = new Settings();
 
             }
-            return instance
+            return instance;
         }
 
     }

@@ -25,8 +25,8 @@ namespace CarReportSystem {
             //設置ファイルを逆シリアル化して設定
 
             InitializeComponent();
-            dgvCarReports.DataSource = CarReports;
-            dgvCarReports.Columns[5].Visible = false;
+           // dgvCarReports.DataSource = CarReports;
+            dgvCarReports.Columns[6].Visible = false;
             foreach (var item in gbMaker.Controls)
             {
 
@@ -39,28 +39,28 @@ namespace CarReportSystem {
         }
 
 
-        private void setSelectedMaker(CarReport.MakerGroup makerGroup) {
+        private void setSelectedMaker(string makerGroup) {
             switch (makerGroup)
             {
-                case CarReport.MakerGroup.TOYOTA:
+                case "TOYOTA":
                     rbTOYOTA.Checked = true;
                     break;
-                case CarReport.MakerGroup.NISSAN:
+                case "NISSAN":
                     rbNISSAN.Checked = true;
                     break;
-                case CarReport.MakerGroup.MAZDA:
+                case "MAZDA":
                     rbMAZDA.Checked = true;
                     break;
-                case CarReport.MakerGroup.SUZUKI:
+                case "SUZUKI":
                     rbSUZUKI.Checked = true;
                     break;
-                case CarReport.MakerGroup.SUBARU:
+                case "SUBARU":
                     rbSUBARU.Checked = true;
                     break;
-                case CarReport.MakerGroup.BMW:
+                case "BMW":
                     rbBMW.Checked = true;
                     break;
-                case CarReport.MakerGroup.AUDI:
+                case "AUDI":
                     rbAUDI.Checked = true;
                     break;
             }
@@ -178,15 +178,26 @@ namespace CarReportSystem {
             if (dgvCarReports.SelectedRows.Count <= 0)
             {
                 tsInfoText.Text = "行を選択してください";
+               
+                
             }
             else
             {
-                dgvCarReports.CurrentRow.Cells[0].Value = dtpDate.Text;
+                dgvCarReports.CurrentRow.Cells[1].Value = dtpDate.Value;
+                dgvCarReports.CurrentRow.Cells[2].Value = cbAuthor.Text;
+                dgvCarReports.CurrentRow.Cells[3].Value = getSelectMaker();
+                dgvCarReports.CurrentRow.Cells[4].Value = cbCarName.Text;
+                dgvCarReports.CurrentRow.Cells[5].Value = tbRP.Text;
+                dgvCarReports.CurrentRow.Cells[6].Value = pbCarImage.Image;
+                dgvCarReports.Refresh();
+                /*dgvCarReports.CurrentRow.Cells[0].Value = dtpDate.Text;
                 dgvCarReports.CurrentRow.Cells[1].Value = cbAuthor.Text;
                 dgvCarReports.CurrentRow.Cells[2].Value = getSelectMaker();
                 dgvCarReports.CurrentRow.Cells[3].Value = cbCarName.Text;
                 dgvCarReports.CurrentRow.Cells[4].Value = tbRP.Text;
                 dgvCarReports.CurrentRow.Cells[5].Value = pbCarImage.Image;
+                dgvCarReports.Refresh();
+                */
                 Clear();
             }
         }
@@ -341,12 +352,12 @@ namespace CarReportSystem {
             Truebt();
             if (dgvCarReports.Rows.Count != 0)
             {
-                dtpDate.Text = dgvCarReports.CurrentRow.Cells[0].Value.ToString();
-                cbAuthor.Text = dgvCarReports.CurrentRow.Cells[1].Value.ToString();
-                cbCarName.Text = dgvCarReports.CurrentRow.Cells[3].Value.ToString();
-                setSelectedMaker((CarReport.MakerGroup)dgvCarReports.CurrentRow.Cells[2].Value);
-                tbRP.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
-                pbCarImage.Image = (Image)dgvCarReports.CurrentRow.Cells[5].Value;
+                dtpDate.Value = (DateTime)dgvCarReports.CurrentRow.Cells[1].Value;
+                cbAuthor.Text = dgvCarReports.CurrentRow.Cells[2].Value.ToString();
+                cbCarName.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
+                setSelectedMaker(dgvCarReports.CurrentRow.Cells[3].ToString());
+                tbRP.Text = dgvCarReports.CurrentRow.Cells[5].Value.ToString();
+               
                 Truebt();
             }
         }
@@ -368,13 +379,26 @@ namespace CarReportSystem {
         private void btConnection_Click(object sender, EventArgs e) {
             // TODO: このコード行はデータを 'infosys202313DataSet.CarReportTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableTableAdapter.Fill(this.infosys202313DataSet.CarReportTable);
-
-            // TODO: このコード行はデータを 'infosys202313DataSet.CarReportTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.carReportTableTableAdapter.Fill(this.infosys202313DataSet.CarReportTable);
+            dgvCarReports.ClearSelection();
         }
 
         private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
+
+        // バイト配列をImageオブジェクトに変換
+        public static Image ByteArrayToImage(byte[] b) {
+            ImageConverter imgconv = new ImageConverter();
+            Image img = (Image)imgconv.ConvertFrom(b);
+            return img;
+        }
+
+        // Imageオブジェクトをバイト配列に変換
+        public static byte[] ImageToByteArray(Image img) {
+            ImageConverter imgconv = new ImageConverter();
+            byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
+            return b;
+        }
     }
+
 }
