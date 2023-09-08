@@ -109,6 +109,17 @@ namespace CarReportSystem {
             Clear();
             Falsebt();
             dgvCarReports.CurrentCell = null;
+
+            DataRow newRow = infosys202313DataSet.CarReportTable.NewRow();
+            newRow[1] = dtpDate.Value;
+            newRow[2] = cbAuthor.Text;
+            newRow[3] = getSelectMaker();
+            newRow[4] = cbCarName.Text;
+            newRow[5] = tbRP.Text;
+            newRow[6] = ImageToByteArray(pbCarImage.Image);
+
+            infosys202313DataSet.CarReportTable.Rows.Add(newRow);
+            this.carReportTableTableAdapter.Update(infosys202313DataSet.CarReportTable);
         }
         private CarReport.MakerGroup getSelectMaker() {
 
@@ -161,15 +172,8 @@ namespace CarReportSystem {
 
         private void btImageDeleteReport_Click(object sender, EventArgs e) {
             {
-                DataGridViewSelectedRowCollection src = dgvCarReports.SelectedRows;
-                for (int i = src.Count - 1; i >= 0; i--)
-                {
-                    dgvCarReports.Rows.RemoveAt(src[i].Index);
-                }
-                if (dgvCarReports.Rows.Count == 0)
-                {
-                    Falsebt();
-                }
+                dgvCarReports.Rows.RemoveAt(dgvCarReports.CurrentRow.Index);
+                this.tableAdapterManager.UpdateAll(this.infosys202313DataSet);
                 Clear();
             }
         }
@@ -357,7 +361,14 @@ namespace CarReportSystem {
                 cbCarName.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
                 setSelectedMaker(dgvCarReports.CurrentRow.Cells[3].ToString());
                 tbRP.Text = dgvCarReports.CurrentRow.Cells[5].Value.ToString();
-               
+                if (!dgvCarReports.CurrentRow.Cells[6].Value.Equals(DBNull.Value)) {
+                    pbCarImage.Image = ByteArrayToImage((Byte[])dgvCarReports.CurrentRow.Cells[6].Value);
+                }
+                else
+                {
+                    pbCarImage.Image = null;
+                }
+                
                 Truebt();
             }
         }
