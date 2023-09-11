@@ -361,7 +361,9 @@ namespace CarReportSystem {
                 cbCarName.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
                 setSelectedMaker(dgvCarReports.CurrentRow.Cells[3].ToString());
                 tbRP.Text = dgvCarReports.CurrentRow.Cells[5].Value.ToString();
-                if (!dgvCarReports.CurrentRow.Cells[6].Value.Equals(DBNull.Value)) {
+                if (!dgvCarReports.CurrentRow.Cells[6].Value.Equals(DBNull.Value) &&
+                    ((Byte[])dgvCarReports.CurrentRow.Cells[6].Value).Length != 0 )  {
+                    
                     pbCarImage.Image = ByteArrayToImage((Byte[])dgvCarReports.CurrentRow.Cells[6].Value);
                 }
                 else
@@ -390,7 +392,15 @@ namespace CarReportSystem {
         private void btConnection_Click(object sender, EventArgs e) {
             // TODO: このコード行はデータを 'infosys202313DataSet.CarReportTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableTableAdapter.Fill(this.infosys202313DataSet.CarReportTable);
+
             dgvCarReports.ClearSelection();
+
+            foreach (var careport in infosys202313DataSet.CarReportTable)
+            {
+                cbAuthor.Items.Add(careport.Author);
+                cbCarName.Items.Add(careport.CarName);
+            }
+            
         }
 
         private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e) {
