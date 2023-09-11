@@ -389,24 +389,6 @@ namespace CarReportSystem {
 
         }
         //イベントハンドラー
-        private void btConnection_Click(object sender, EventArgs e) {
-            // TODO: このコード行はデータを 'infosys202313DataSet.CarReportTable' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.carReportTableTableAdapter.Fill(this.infosys202313DataSet.CarReportTable);
-
-            dgvCarReports.ClearSelection();
-
-            foreach (var careport in infosys202313DataSet.CarReportTable)
-            {
-                cbAuthor.Items.Add(careport.Author);
-                cbCarName.Items.Add(careport.CarName);
-            }
-            
-        }
-
-        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
-
         // バイト配列をImageオブジェクトに変換
         public static Image ByteArrayToImage(byte[] b) {
             ImageConverter imgconv = new ImageConverter();
@@ -420,6 +402,18 @@ namespace CarReportSystem {
             byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
             return b;
         }
-    }
 
+        private void 接続ToolStripMenuItem_Click(object sender, EventArgs e) {
+            this.carReportTableTableAdapter.Fill(this.infosys202313DataSet.CarReportTable);
+
+            dgvCarReports.ClearSelection();
+
+            foreach (var careport in infosys202313DataSet.CarReportTable)
+            {
+                cbAuthor.Items.Add(careport.Author);
+                cbCarName.Items.Add(careport.CarName);
+            }
+
+        }
+    }
 }
