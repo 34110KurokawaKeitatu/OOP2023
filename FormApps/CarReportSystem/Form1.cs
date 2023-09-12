@@ -397,7 +397,13 @@ namespace CarReportSystem {
 
         private void btAuthorrSearch_Click(object sender, EventArgs e) {
             this.carReportTableTableAdapter.FillByAuther(this.infosys202313DataSet.CarReportTable,tbAuthor.Text);
+            dgvCarReports.ClearSelection();
 
+            foreach (var careport in infosys202313DataSet.CarReportTable)
+            {
+                cbAuthor.Items.Add(careport.Author);
+                cbCarName.Items.Add(careport.CarName);
+            }
         }
 
         private void btCarSearch_Click(object sender, EventArgs e) {
