@@ -88,8 +88,8 @@
     </None>
     <None Include="infosys202313DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>infosys202313DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>infosys202313DataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="infosys202313DataSet.xss">
       <DependentUpon>infosys202313DataSet.xsd</DependentUpon>

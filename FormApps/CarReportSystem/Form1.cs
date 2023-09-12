@@ -13,7 +13,7 @@ using System.Xml;
 using System.Xml.Serialization;
 
 namespace CarReportSystem {
-    public partial class Form1 : Form {
+    public partial class btpTime : Form {
         //管理用のデータ
         BindingList<CarReport> CarReports = new BindingList<CarReport>();
         private uint mode;
@@ -21,7 +21,7 @@ namespace CarReportSystem {
         Settings settigs = Settings.getInstance();
 
 
-        public Form1() {
+        public btpTime() {
             //設置ファイルを逆シリアル化して設定
 
             InitializeComponent();
@@ -167,6 +167,7 @@ namespace CarReportSystem {
 
         private void btImageOpenReport_Click(object sender, EventArgs e) {
             openFileDialog1.ShowDialog();
+
             pbCarImage.Image = Image.FromFile(openFileDialog1.FileName);
         }
 
@@ -382,5 +383,29 @@ namespace CarReportSystem {
             }
 
         }
+
+        private void label7_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btAuthorrSearch_Click(object sender, EventArgs e) {
+            this.carReportTableTableAdapter.FillByAuther(this.infosys202313DataSet.CarReportTable,tbAuthor.Text);
+        }
+
+        private void btCarSearch_Click(object sender, EventArgs e) {
+            this.carReportTableTableAdapter.FillByCarName(this.infosys202313DataSet.CarReportTable,tbCarName.Text);
+
+        }
+
+        private void btTime_Click(object sender, EventArgs e) {
+            this.carReportTableTableAdapter.FillByDate(this.infosys202313DataSet.CarReportTable,dtpTimeS.Text);
+
+        }
+
+        private void btReset_Click(object sender, EventArgs e) {
+            this.carReportTableTableAdapter.Fill(this.infosys202313DataSet.CarReportTable);
+        }
     }
 }
+
+
