@@ -36,7 +36,7 @@ namespace Exercise01 {
         }
 
         private static void DisplayDatePattern3_2(DateTime dateTime) {
-            }
+            
         }
     }
 }
