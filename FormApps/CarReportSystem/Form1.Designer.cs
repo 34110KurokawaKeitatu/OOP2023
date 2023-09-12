@@ -80,6 +80,7 @@ namespace CarReportSystem {
             this.btAuthorrSearch = new System.Windows.Forms.Button();
             this.tbAuthor = new System.Windows.Forms.TextBox();
             this.dtpTimeS = new System.Windows.Forms.DateTimePicker();
+            this.btReset = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,7 +92,7 @@ namespace CarReportSystem {
             this.infosys202313DataSet = new CarReportSystem.infosys202313DataSet();
             this.carReportTableTableAdapter = new CarReportSystem.infosys202313DataSetTableAdapters.CarReportTableTableAdapter();
             this.tableAdapterManager = new CarReportSystem.infosys202313DataSetTableAdapters.TableAdapterManager();
-            this.btReset = new System.Windows.Forms.Button();
+            this.btpTimeSE = new System.Windows.Forms.DateTimePicker();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarReports)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -338,7 +339,7 @@ namespace CarReportSystem {
             // btDeleteReport
             // 
             this.btDeleteReport.BackColor = System.Drawing.Color.Silver;
-            this.btDeleteReport.Location = new System.Drawing.Point(542, 44);
+            this.btDeleteReport.Location = new System.Drawing.Point(542, 41);
             this.btDeleteReport.Name = "btDeleteReport";
             this.btDeleteReport.Size = new System.Drawing.Size(75, 23);
             this.btDeleteReport.TabIndex = 15;
@@ -520,6 +521,7 @@ namespace CarReportSystem {
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btpTimeSE);
             this.groupBox1.Controls.Add(this.btReset);
             this.groupBox1.Controls.Add(this.dtpTimeS);
             this.groupBox1.Controls.Add(this.btTime);
@@ -539,7 +541,7 @@ namespace CarReportSystem {
             // 
             // btTime
             // 
-            this.btTime.Location = new System.Drawing.Point(183, 74);
+            this.btTime.Location = new System.Drawing.Point(183, 97);
             this.btTime.Name = "btTime";
             this.btTime.Size = new System.Drawing.Size(75, 23);
             this.btTime.TabIndex = 32;
@@ -605,6 +607,16 @@ namespace CarReportSystem {
             this.dtpTimeS.Name = "dtpTimeS";
             this.dtpTimeS.Size = new System.Drawing.Size(100, 19);
             this.dtpTimeS.TabIndex = 33;
+            // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(183, 126);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(75, 23);
+            this.btReset.TabIndex = 34;
+            this.btReset.Text = "リセット";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -675,15 +687,12 @@ namespace CarReportSystem {
             this.tableAdapterManager.CarReportTableTableAdapter = this.carReportTableTableAdapter;
             this.tableAdapterManager.UpdateOrder = CarReportSystem.infosys202313DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // btReset
+            // btpTimeSE
             // 
-            this.btReset.Location = new System.Drawing.Point(183, 126);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(75, 23);
-            this.btReset.TabIndex = 34;
-            this.btReset.Text = "リセット";
-            this.btReset.UseVisualStyleBackColor = true;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            this.btpTimeSE.Location = new System.Drawing.Point(77, 101);
+            this.btpTimeSE.Name = "btpTimeSE";
+            this.btpTimeSE.Size = new System.Drawing.Size(100, 19);
+            this.btpTimeSE.TabIndex = 35;
             // 
             // btpTime
             // 
@@ -804,6 +813,7 @@ namespace CarReportSystem {
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtpTimeS;
         private System.Windows.Forms.Button btReset;
+        private System.Windows.Forms.DateTimePicker btpTimeSE;
     }
 }
 

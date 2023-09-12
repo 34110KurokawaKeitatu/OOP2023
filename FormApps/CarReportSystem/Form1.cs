@@ -106,7 +106,7 @@ namespace CarReportSystem {
                 cbCarName.Items.Add(cbCarName.Text);
             }
             CarReports.Add(carReport);
-            Clear();
+            
             Falsebt();
             dgvCarReports.CurrentCell = null;
 
@@ -120,6 +120,7 @@ namespace CarReportSystem {
 
             infosys202313DataSet.CarReportTable.Rows.Add(newRow);
             this.carReportTableTableAdapter.Update(infosys202313DataSet.CarReportTable);
+            Clear();
         }
         private CarReport.MakerGroup getSelectMaker() {
 
@@ -167,8 +168,14 @@ namespace CarReportSystem {
 
         private void btImageOpenReport_Click(object sender, EventArgs e) {
             openFileDialog1.ShowDialog();
+            try
+            {
+                pbCarImage.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+            catch
+            {
 
-            pbCarImage.Image = Image.FromFile(openFileDialog1.FileName);
+            }
         }
 
         private void btImageDeleteReport_Click(object sender, EventArgs e) {
@@ -195,6 +202,9 @@ namespace CarReportSystem {
                 dgvCarReports.CurrentRow.Cells[5].Value = tbRP.Text;
                 dgvCarReports.CurrentRow.Cells[6].Value = pbCarImage.Image;
                 dgvCarReports.Refresh();
+                this.Validate();
+                this.carReportTableBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.infosys202313DataSet);
                 /*dgvCarReports.CurrentRow.Cells[0].Value = dtpDate.Text;
                 dgvCarReports.CurrentRow.Cells[1].Value = cbAuthor.Text;
                 dgvCarReports.CurrentRow.Cells[2].Value = getSelectMaker();
@@ -384,12 +394,10 @@ namespace CarReportSystem {
 
         }
 
-        private void label7_Click(object sender, EventArgs e) {
-
-        }
 
         private void btAuthorrSearch_Click(object sender, EventArgs e) {
             this.carReportTableTableAdapter.FillByAuther(this.infosys202313DataSet.CarReportTable,tbAuthor.Text);
+
         }
 
         private void btCarSearch_Click(object sender, EventArgs e) {
@@ -398,7 +406,7 @@ namespace CarReportSystem {
         }
 
         private void btTime_Click(object sender, EventArgs e) {
-            this.carReportTableTableAdapter.FillByDate(this.infosys202313DataSet.CarReportTable,dtpTimeS.Text);
+            this.carReportTableTableAdapter.FillByDate(this.infosys202313DataSet.CarReportTable,dtpTimeS.Text,btpTimeSE.Text);
 
         }
 
