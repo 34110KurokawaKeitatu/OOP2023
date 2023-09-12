@@ -124,17 +124,6 @@ namespace CarReportSystem {
         }
         private CarReport.MakerGroup getSelectMaker() {
 
-            /* foreach (var item in gbMaker.Controls)
-             {
-                 if (((RadioButton)item).Checked)
-                 {
-                     int tag = int.Parse(((RadioButton)item).Tag.ToString());
-                     break;
-                 }
-
-             }
-             return CarReport.MakerGroup.そのほか;
-             */
             if (rbTOYOTA.Checked)
             {
                 return CarReport.MakerGroup.TOYOTA;
@@ -205,14 +194,6 @@ namespace CarReportSystem {
                 this.Validate();
                 this.carReportTableBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.infosys202313DataSet);
-                /*dgvCarReports.CurrentRow.Cells[0].Value = dtpDate.Text;
-                dgvCarReports.CurrentRow.Cells[1].Value = cbAuthor.Text;
-                dgvCarReports.CurrentRow.Cells[2].Value = getSelectMaker();
-                dgvCarReports.CurrentRow.Cells[3].Value = cbCarName.Text;
-                dgvCarReports.CurrentRow.Cells[4].Value = tbRP.Text;
-                dgvCarReports.CurrentRow.Cells[5].Value = pbCarImage.Image;
-                dgvCarReports.Refresh();
-                */
                 Clear();
             }
         }
@@ -296,6 +277,7 @@ namespace CarReportSystem {
             tsInfoText.Text = "";
             tsTime.Text = DateTime.Now.ToString("HH時mm分ss秒");
             tmTimeUpdate.Start();
+            dgvCarReports.Columns[0].Visible = false;
 
             dgvCarReports.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;
 
