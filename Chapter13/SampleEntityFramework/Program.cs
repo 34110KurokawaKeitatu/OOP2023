@@ -10,21 +10,47 @@ using System.Threading.Tasks;
 namespace SampleEntityFramework {
     class Program {
         static void Main(string[] args) {
-            //  InsertBooks();
-            //  AddAuthors();
-            //AddBooks();
-            //UpdateBook();
-            //DeleteBook();
-            //using (var db = new BooksDbContext())
-            //{
-            //    db.Database.Log = sql => { Debug.Write(sql); };
-            //    var count = db.Books.Count();
-            //    Console.WriteLine(count);
-            //};
-         //   Console.WriteLine("データを挿入");
-           // Console.ReadLine();
-            //Console.WriteLine();
+            Console.WriteLine("# 1.1");
+            Exercise1_1();
+
+            Console.WriteLine();
+            Console.WriteLine("# 1.2");
+            Exercise1_2();
+
+            Console.WriteLine();
+            Console.WriteLine("# 1.3");
+            Exercise1_3();
+
+            Console.WriteLine();
+            Console.WriteLine("# 1.4");
+            Exercise1_4();
+
+            Console.WriteLine();
+            Console.WriteLine("# 1.5");
+            Exercise1_5();
+            Console.ReadLine();
         }
+
+        private static void Exercise1_1() {
+            
+        }
+
+        private static void Exercise1_2() {
+            
+        }
+
+        private static void Exercise1_3() {
+            
+        }
+
+        private static void Exercise1_4() {
+            
+        }
+
+        private static void Exercise1_5() {
+            
+        }
+
         // List 13-5
         static void InsertBooks() {
             using (var db = new BooksDbContext())
