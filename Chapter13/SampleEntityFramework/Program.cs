@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +15,15 @@ namespace SampleEntityFramework {
             //AddBooks();
             //UpdateBook();
             //DeleteBook();
-            foreach(var book in GetBooks())
-            {
-                Console.WriteLine($"{book.Title} {book.Author.Name}");
-            }
-            Console.WriteLine("データを挿入");
-            Console.ReadLine();
-            Console.WriteLine();
+            //using (var db = new BooksDbContext())
+            //{
+            //    db.Database.Log = sql => { Debug.Write(sql); };
+            //    var count = db.Books.Count();
+            //    Console.WriteLine(count);
+            //};
+         //   Console.WriteLine("データを挿入");
+           // Console.ReadLine();
+            //Console.WriteLine();
         }
         // List 13-5
         static void InsertBooks() {
