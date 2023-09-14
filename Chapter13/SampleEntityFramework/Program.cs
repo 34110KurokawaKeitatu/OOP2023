@@ -21,15 +21,15 @@ namespace SampleEntityFramework {
 
             //Console.WriteLine();
             Console.WriteLine("# 1.2");
-            //Exercise1_2();
+            Exercise1_2();
 
-            //Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("# 1.3");
             Exercise1_3();
 
-            //Console.WriteLine();
-            //Console.WriteLine("# 1.4");
-            //Exercise1_4();
+            Console.WriteLine();
+            Console.WriteLine("# 1.4");
+            Exercise1_4();
 
             //Console.WriteLine();
             //Console.WriteLine("# 1.5");
@@ -114,7 +114,15 @@ namespace SampleEntityFramework {
         }
 
         private static void Exercise1_4() {
-            
+            using (var db = new BooksDbContext())
+            {
+                var select = db.Books.OrderBy(s => s.PublishedYear.Value);
+                var selevt = select.Take(3).ToList();
+                foreach (var item in selevt)
+                {
+                    Console.WriteLine($"{item.Title} {item.Author.Name}");
+                }
+            }
         }
 
         private static void Exercise1_5() {
