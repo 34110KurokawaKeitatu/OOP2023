@@ -21,11 +21,11 @@ namespace SampleEntityFramework {
 
             //Console.WriteLine();
             Console.WriteLine("# 1.2");
-            Exercise1_2();
+            //Exercise1_2();
 
             //Console.WriteLine();
-            //Console.WriteLine("# 1.3");
-            //Exercise1_3();
+            Console.WriteLine("# 1.3");
+            Exercise1_3();
 
             //Console.WriteLine();
             //Console.WriteLine("# 1.4");
@@ -102,7 +102,15 @@ namespace SampleEntityFramework {
         }
 
         private static void Exercise1_3() {
-            
+            using (var db = new BooksDbContext())
+            {
+                var select = db.Books.Max(s => s.Title.Length);
+                var selevt = db.Books.Where(s => s.Title.Length == select);
+                foreach (var item in selevt)
+                {
+                    Console.WriteLine(item.Title);
+                }
+            }
         }
 
         private static void Exercise1_4() {
