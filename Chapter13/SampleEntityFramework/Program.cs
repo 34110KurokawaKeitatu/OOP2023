@@ -10,29 +10,86 @@ using System.Threading.Tasks;
 namespace SampleEntityFramework {
     class Program {
         static void Main(string[] args) {
+            //InsertBooks();
+            //using (var db = new BooksDbContext())
+            //{
+            //    var count = db.Books.Count();
+            //    Console.WriteLine(count);
+            //}
             Console.WriteLine("# 1.1");
             Exercise1_1();
 
-            Console.WriteLine();
-            Console.WriteLine("# 1.2");
-            Exercise1_2();
+            //Console.WriteLine();
+            //Console.WriteLine("# 1.2");
+            //Exercise1_2();
 
-            Console.WriteLine();
-            Console.WriteLine("# 1.3");
-            Exercise1_3();
+            //Console.WriteLine();
+            //Console.WriteLine("# 1.3");
+            //Exercise1_3();
 
-            Console.WriteLine();
-            Console.WriteLine("# 1.4");
-            Exercise1_4();
+            //Console.WriteLine();
+            //Console.WriteLine("# 1.4");
+            //Exercise1_4();
 
-            Console.WriteLine();
-            Console.WriteLine("# 1.5");
-            Exercise1_5();
-            Console.ReadLine();
+            //Console.WriteLine();
+            //Console.WriteLine("# 1.5");
+            //Exercise1_5();
+            //Console.ReadLine();
+
+
         }
 
         private static void Exercise1_1() {
-            
+            using (var db = new BooksDbContext())
+            {
+                var author1 = db.Authors.Single(a => a.Name == "夏目漱石");
+                var book1 = new Book
+                {
+                    Title = "ココロ",
+                    PublishedYear = 1991,
+                    Author = author1
+                };
+                db.Books.Add(book1);
+                var book2 = new Book
+                {
+                    Title = "伊豆の踊り子",
+                    PublishedYear = 2003,
+                    Author = new Author
+                    {
+
+                        Birthday = new DateTime(1899, 6, 14),
+                        Gender = "M",
+                        Name = "川端康成",
+                    }
+                };
+                db.Books.Add(book2);
+                var book3 = new Book
+                {
+                    Title = "真珠夫人",
+                    PublishedYear = 2002,
+                    Author = new Author
+                    {
+                        Birthday = new DateTime(1888, 12, 26),
+                        Gender = "M",
+                        Name = "菊池寛",
+                    }
+                };
+                db.Books.Add(book3);
+                var book4 = new Book
+                {
+                    Title = "注文の多い料理店",
+                    PublishedYear = 2000,
+                    Author = new Author
+                    {
+                        Birthday = new DateTime(1888, 12, 26),
+                        Gender = "M",
+                        Name = "宮沢賢治"
+                    }
+                };
+                db.Books.Add(book4);
+                db.SaveChanges();
+
+            }
         }
 
         private static void Exercise1_2() {
