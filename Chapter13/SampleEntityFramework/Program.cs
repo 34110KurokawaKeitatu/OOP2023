@@ -17,11 +17,11 @@ namespace SampleEntityFramework {
             //    Console.WriteLine(count);
             //}
             Console.WriteLine("# 1.1");
-            Exercise1_1();
+           // Exercise1_1();
 
             //Console.WriteLine();
-            //Console.WriteLine("# 1.2");
-            //Exercise1_2();
+            Console.WriteLine("# 1.2");
+            Exercise1_2();
 
             //Console.WriteLine();
             //Console.WriteLine("# 1.3");
@@ -93,7 +93,12 @@ namespace SampleEntityFramework {
         }
 
         private static void Exercise1_2() {
-            
+            using (var db = new BooksDbContext()) {
+                foreach (var book in db.Books.ToList())
+                {
+                    Console.WriteLine($"{book.Title} {book.PublishedYear}年 {book.Author.Name}");
+                }
+            }
         }
 
         private static void Exercise1_3() {
@@ -137,7 +142,7 @@ namespace SampleEntityFramework {
                 };
                 db.Books.Add(book2);
                 db.SaveChanges();　//データーベースを更新
-                Console.WriteLine($"{book1.Id} {book2.Id}");
+                Console.WriteLine($"{book1.Id} {book2.Id} ");
             }
 
 
