@@ -29,28 +29,18 @@ namespace RssReader {
                 var ulr = wc.OpenRead(tbUrl.Text);
                 XDocument xdoc = XDocument.Load(ulr);
 
-                var nodes = xdoc.Root.Descendants("item")
-                   .Select(x => new ItemData
-                   {
-                       Title = (string)x.Element("title")
-                   }
-                       );
-                var LinkDates = xdoc.Root.Descendants("item")
+               
+                ToLink = xdoc.Root.Descendants("item")
                     .Select(x => new ItemData
                     {
-
+                        Title = (string)x.Element("title"),
                         link = (string)x.Element("link"),
                     }
-                        );
+                        ).ToList();
 
-                foreach (var node in nodes)
+                foreach (var item in ToLink)
                 {
-                    lbRssTitle.Items.Add(node.Title);
-
-                }
-                foreach (var item in LinkDates)
-                {
-                    ToLink.Add(item);
+                    lbRssTitle.Items.Add(item.Title);
                 }
             }
         }

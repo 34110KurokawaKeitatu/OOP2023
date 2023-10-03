@@ -30,6 +30,7 @@ namespace RssReader {
             this.lbRssTitle = new System.Windows.Forms.ListBox();
             this.wbBrowser = new System.Windows.Forms.WebBrowser();
             this.tbUlrBox = new System.Windows.Forms.TextBox();
+            this.TheEnd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -77,11 +78,21 @@ namespace RssReader {
             this.tbUlrBox.Size = new System.Drawing.Size(686, 19);
             this.tbUlrBox.TabIndex = 4;
             // 
+            // TheEnd
+            // 
+            this.TheEnd.Location = new System.Drawing.Point(652, 29);
+            this.TheEnd.Name = "TheEnd";
+            this.TheEnd.Size = new System.Drawing.Size(22, 23);
+            this.TheEnd.TabIndex = 5;
+            this.TheEnd.Text = "button1";
+            this.TheEnd.UseVisualStyleBackColor = true;
+            // 
             // btGet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 589);
+            this.Controls.Add(this.TheEnd);
             this.Controls.Add(this.tbUlrBox);
             this.Controls.Add(this.wbBrowser);
             this.Controls.Add(this.lbRssTitle);
@@ -101,6 +112,7 @@ namespace RssReader {
         private System.Windows.Forms.ListBox lbRssTitle;
         private System.Windows.Forms.WebBrowser wbBrowser;
         private System.Windows.Forms.TextBox tbUlrBox;
+        private System.Windows.Forms.Button TheEnd;
     }
 }
 
