@@ -14,6 +14,7 @@ using System.Xml.Linq;
 namespace RssReader {
     public partial class btGet : Form {
         List<ItemData> ToLink = new List<ItemData>();
+        int num = 0;
         public btGet() {
             
             InitializeComponent();
@@ -24,8 +25,10 @@ namespace RssReader {
         }
 
         private void btGetUlr_Click(object sender, EventArgs e) {
+            
             using (var wc = new WebClient())
             {
+                
                 var ulr = wc.OpenRead(tbUrl.Text);
                 XDocument xdoc = XDocument.Load(ulr);
 
@@ -47,14 +50,24 @@ namespace RssReader {
 
         private void lbRssTitle_SelectedIndexChanged(object sender, EventArgs e) {
             // wbBrowser.Navigate(lbRssTitle.Items.ToString()); 
-            var num = lbRssTitle.SelectedIndex;
+            num = lbRssTitle.SelectedIndex;
             wbBrowser.Navigate(ToLink[num].link);
 
 
         }
 
         private void TheEnd_Click(object sender, EventArgs e) {
-            tbUlrBox.Text = "";
+            tbUrl.ResetText();
+        }
+
+        private void btUp_Click(object sender, EventArgs e) {
+            num -= 1;
+            lbRssTitle.SelectedIndex -= 1;
+        }
+
+        private void btDown_Click(object sender, EventArgs e) {
+            num += 1;
+            lbRssTitle.SelectedIndex += 1;
         }
     }
 }
