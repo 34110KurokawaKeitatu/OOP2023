@@ -339,5 +339,9 @@ namespace CarReportSystem {
             tbRP.Text = dgvCarReports.CurrentRow.Cells[4].Value.ToString();
             pbCarImage.Image = (Image)dgvCarReports.CurrentRow.Cells[5].Value;
         }
+
+        private void pbCarImage_Click(object sender, EventArgs e) {
+
+        }
     }
 }
