@@ -52,5 +52,9 @@ namespace RssReader {
 
 
         }
+
+        private void TheEnd_Click(object sender, EventArgs e) {
+            tbUlrBox.Text = "";
+        }
     }
 }

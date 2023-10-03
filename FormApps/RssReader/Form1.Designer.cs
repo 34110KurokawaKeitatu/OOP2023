@@ -80,12 +80,15 @@ namespace RssReader {
             // 
             // TheEnd
             // 
-            this.TheEnd.Location = new System.Drawing.Point(652, 29);
+            this.TheEnd.Font = new System.Drawing.Font("MS UI Gothic", 15F);
+            this.TheEnd.ForeColor = System.Drawing.Color.Red;
+            this.TheEnd.Location = new System.Drawing.Point(640, 19);
             this.TheEnd.Name = "TheEnd";
-            this.TheEnd.Size = new System.Drawing.Size(22, 23);
+            this.TheEnd.Size = new System.Drawing.Size(35, 37);
             this.TheEnd.TabIndex = 5;
-            this.TheEnd.Text = "button1";
+            this.TheEnd.Text = "×";
             this.TheEnd.UseVisualStyleBackColor = true;
+            this.TheEnd.Click += new System.EventHandler(this.TheEnd_Click);
             // 
             // btGet
             // 
