@@ -25,10 +25,9 @@ namespace RssReader {
         }
 
         private void btGetUlr_Click(object sender, EventArgs e) {
-            
             using (var wc = new WebClient())
             {
-                
+                lbRssTitle.Items.Clear();
                 var ulr = wc.OpenRead(tbUrl.Text);
                 XDocument xdoc = XDocument.Load(ulr);
 
