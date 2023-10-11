@@ -33,6 +33,7 @@ namespace RssReader {
             this.TheEnd = new System.Windows.Forms.Button();
             this.btUp = new System.Windows.Forms.Button();
             this.btDown = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -116,11 +117,23 @@ namespace RssReader {
             this.btDown.UseVisualStyleBackColor = true;
             this.btDown.Click += new System.EventHandler(this.btDown_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FloralWhite;
+            this.button1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.button1.Location = new System.Drawing.Point(691, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 37);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "★";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // btGet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 589);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btDown);
             this.Controls.Add(this.btUp);
             this.Controls.Add(this.TheEnd);
@@ -146,6 +159,7 @@ namespace RssReader {
         private System.Windows.Forms.Button TheEnd;
         private System.Windows.Forms.Button btUp;
         private System.Windows.Forms.Button btDown;
+        private System.Windows.Forms.Button button1;
     }
 }
 
