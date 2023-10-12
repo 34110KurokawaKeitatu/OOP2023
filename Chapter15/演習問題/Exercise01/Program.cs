@@ -103,8 +103,9 @@ namespace Exercise01 {
                     PublishedYear = book.PublishedYear,
                     Price = book.Price
                 }
-                );
-            foreach (var item in books.GroupBy(s => s.PublishedYear).OrderBy(s => s.Key))
+                ).GroupBy(s => s.PublishedYear);
+
+            foreach (var item in books.OrderBy(s => s.Key))
             {
                 Console.WriteLine("#{0}",item.Key);
                 foreach (var items in item)
