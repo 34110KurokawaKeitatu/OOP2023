@@ -92,11 +92,41 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_7() {
+            var books = Library.Books
+                .Where(b => b.CategoryId ==1)
+                .Join(Library.Categories,
+                book => book.CategoryId,
+                category => category.Id,
+                (book, category) => new {
+                    Title = book.Title,
+                    Category = category.Name,
+                    PublishedYear = book.PublishedYear,
+                    Price = book.Price
+                }
+                );
+            foreach (var item in books.GroupBy(s => s.PublishedYear).OrderBy(s => s.Key))
+            {
+                Console.WriteLine("#{0}",item.Key);
+                foreach (var items in item)
+                {
+                    Console.WriteLine(items.Title)
+;                }
+            }
             
         }
-
         private static void Exercise1_8() {
-            
+            var groups = Library.Categories
+                    .GroupJoin(Library.Books,
+                    c => c.Id,
+                    b => b.CategoryId,
+                    (c, books) => new { Category = c.Name, Count = books.Count() });
+            foreach (var item in groups)
+            {
+                if(item.Count >= 4)
+                {
+                    Console.WriteLine(item.Category);
+                }
+            }
         }
     }
 }
