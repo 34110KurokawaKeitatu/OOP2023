@@ -26,7 +26,8 @@ namespace Exercise01 {
 
         private static void Exercise1_2() {
             var pricemax = Library.Books.Max(s => s.Price);
-            Console.WriteLine(pricemax);
+            var info = Library.Books.First(s => s.Price == pricemax);
+            Console.WriteLine(info);
         }
 
         private static void Exercise1_3() {
@@ -40,10 +41,22 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_4() {
-            var year = Library.Books.GroupBy(s => s.PublishedYear);
-            foreach(var pricemax in year)
+            var books = Library.Books
+                .OrderByDescending(b => b.PublishedYear)
+                .ThenByDescending(b => b.PublishedYear)
+                .Join(Library.Categories,
+                book => book.CategoryId,
+                category => category.Id,
+                (book, category) => new {
+                    Title = book.Title,
+                    Category = category.Name,
+                    PublishedYear = book.PublishedYear,
+                    Price = book.Price
+                }
+                );
+            foreach(var pricemax in books)
             {
-                Console.WriteLine(pricemax);
+                Console.WriteLine("{0}年　{1}円　{2}（{3}）",pricemax.PublishedYear,pricemax.Price,pricemax.Title,pricemax.Category);
             }
         }
 
