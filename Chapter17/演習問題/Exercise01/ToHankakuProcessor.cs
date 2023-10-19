@@ -18,7 +18,6 @@ namespace Exercise01 {
             var s = Regex.Replace(line, "[０-９]", c => _dictionary[c.Value[0]].ToString());
             Console.WriteLine(s);
         }
-        protected override void Terminate() {
-        }
+
     }
 }
