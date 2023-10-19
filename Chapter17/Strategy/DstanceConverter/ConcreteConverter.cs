@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DistanceConverter {
+namespace Exercise02 {
     // List 17-13 (ConverterBaseの具象クラス)
 
     public class MeterConverter : ConverterBase {
