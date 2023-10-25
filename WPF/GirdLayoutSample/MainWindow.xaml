@@ -1,0 +1,48 @@
+﻿<Window x:Class="GirdLayoutSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GirdLayoutSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" Text="項目"/>
+        <TextBlock Grid.Column="2" Text="設定値"/>
+        <Label Content="ON/OFF(_O)" Grid.Row="1"
+               Target="{Binding ElementName=checkBox,Mode=OneWay}"/>
+        <CheckBox x:Name="checkBox" Grid.Column="1" VerticalAlignment="Center" Grid.Row="1" Content="チェックしたらON"
+                  Checked="checkBox_Checked" Unchecked="checkBox_Checked"/>
+        
+        <TextBlock x:Name="checkBoxTextBlock" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"/>
+        <Label Content="色(_C)" Grid.Row="2"
+               Target="{Binding ElementName=redRadioButton, Mode=OneWay}"/>
+        <StackPanel Grid.Column="1" Grid.Row="2"  >
+            <RadioButton x:Name="redRadioButton" Content="赤" GroupName="Color" Checked="redRadioButton_Checked"/>
+            <RadioButton x:Name="yellowRadioButton" Content="黄" GroupName="Color" Checked="yellowRadioButton_Checked"/>
+            <RadioButton x:Name="blueRadioButton" Content="青" GroupName="Color" Margin="0,0,0.4,0" Checked="blueRadioButton_Checked" />
+        </StackPanel>
+        <TextBlock x:Name="colorBoxTextBlock" Grid.Column="2" Grid.Row="2"/>
+        <Label Content="季節(_S)" Grid.Row="3"
+               Target="{Binding ElementName=seasonComboBox, Mode=OneWay}}"/>
+        <ComboBox x:Name="seasonComboBox" Grid.Column="1" Grid.Row="3" SelectionChanged="seasonComboBox_SelectionChanged">
+            <ComboBoxItem Content="春"/>
+            <ComboBoxItem Content="夏"/>
+            <ComboBoxItem Content="秋"/>
+            <ComboBoxItem Content="冬"/>
+        </ComboBox>
+        <TextBlock x:Name="seasonBoxTextBlock" Grid.Column="3" Grid.Row="2"/>
+    </Grid>
+</Window>
