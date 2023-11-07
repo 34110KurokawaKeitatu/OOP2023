@@ -23,15 +23,15 @@ namespace ColorChecker {
         }
 
         private void stacckBotonn_Click(object sender, RoutedEventArgs e) {
-            string format = String.Format("R{0} G{1} B{2}",redSlider.Value,greenSlider.Value,blueSlider.Value);
+            string format = String.Format("R {0} G {1} B {2}",redSlider.Value,greenSlider.Value,blueSlider.Value);
             colorListbox.Items.Add(format);
             
         }
         private void colorListbox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             string[] Click = colorListbox.SelectedItem.ToString().Split(' ');
-            rText.Text = Click[0];
-            gText.Text = Click[1];
-            bText.Text = Click[2];
+            rText.Text = Click[1];
+            gText.Text = Click[3];
+            bText.Text = Click[5];
         }
 
         private MyColor[] GetColorList() {
