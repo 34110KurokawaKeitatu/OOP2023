@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A61A1CF-EC05-4CB6-AE1C-290647411FD8}</ProjectGuid>
+    <ProjectGuid>{7A5F2864-61B4-4F94-9356-10DDA099B83F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SampleUnitConverter</RootNamespace>
     <AssemblyName>SampleUnitConverter</AssemblyName>
@@ -58,8 +58,8 @@
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="DistanceUnit.cs" />
     <Compile Include="ImperialUnit.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="MetricUnit.cs" />
-    <Compile Include="SampleUnitConverter.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

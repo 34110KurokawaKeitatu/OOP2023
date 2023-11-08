@@ -28,22 +28,25 @@ namespace RssReader {
             using (var wc = new WebClient())
             {
                 lbRssTitle.Items.Clear();
-                var ulr = wc.OpenRead(tbUrl.Text);
-                XDocument xdoc = XDocument.Load(ulr);
-
-               
-                ToLink = xdoc.Root.Descendants("item")
-                    .Select(x => new ItemData
-                    {
-                        Title = (string)x.Element("title"),
-                        link = (string)x.Element("link"),
-                    }
-                        ).ToList();
-
-                foreach (var item in ToLink)
+                try
                 {
-                    lbRssTitle.Items.Add(item.Title);
+                    var ulr = wc.OpenRead(tbUrl.Text);
+                    XDocument xdoc = XDocument.Load(ulr);
+
+                    ToLink = xdoc.Root.Descendants("item")
+                        .Select(x => new ItemData
+                        {
+                            Title = (string)x.Element("title"),
+                            link = (string)x.Element("link"),
+                        }
+                            ).ToList();
+
+                    foreach (var item in ToLink)
+                    {
+                        lbRssTitle.Items.Add(item.Title);
+                    }
                 }
+                catch (Exception ){ }
             }
         }
 
