@@ -8,7 +8,7 @@ namespace SampleUnitConverter {
     public class GramUnit : DistanceUnit {
         private static List<GramUnit> units = new List<GramUnit> {
             new GramUnit{Name = "g" ,Coefficient = 1 },
-            new GramUnit{Name = "kg",Coefficient = 1 * 1000 ,},
+            new GramUnit{Name = "kg",Coefficient = 1000},
 
         };
         public static ICollection<GramUnit> Units { get { return units; } }
@@ -19,8 +19,8 @@ namespace SampleUnitConverter {
         /// <param name="unit">ヤード単位</param>
         /// <param name="value">値</param>
         /// <returns>変換値</returns>
-        public double FromImperialUnit(LbUnit unit, double value) {
-            return (value * unit.Coefficient) * 25.4 / this.Coefficient;
+        public double FromLbUnit(LbUnit unit, double value) {
+            return (value * unit.Coefficient) * 453.6 / this.Coefficient;
         }
     }
 }

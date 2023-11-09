@@ -8,7 +8,7 @@ namespace SampleUnitConverter {
     public class LbUnit : DistanceUnit {
         private static List<LbUnit> units = new List<LbUnit> {
             new LbUnit{Name = "ポンド",Coefficient = 1},
-            new LbUnit{Name = "オンス",Coefficient = 1 / 28},
+            new LbUnit{Name = "オンス",Coefficient = 16},
 
         };
         public static ICollection<LbUnit> Units { get { return units; } }
@@ -19,8 +19,8 @@ namespace SampleUnitConverter {
         /// <param name="unit">ヤード単位</param>
         /// <param name="value">値</param>
         /// <returns>変換値</returns>
-        public double FromImperialUnit(GramUnit unit, double value) {
-            return (value * unit.Coefficient) * 25.4 / this.Coefficient;
+        public double FromGramUnit(GramUnit unit, double value) {
+            return (value * unit.Coefficient) / 453.6 / this.Coefficient;
         }
     }
 }

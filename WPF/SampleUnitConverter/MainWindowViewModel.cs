@@ -80,11 +80,11 @@ namespace SampleUnitConverter {
                     this.CurrentImperialUnit, this.ImperialValue));
 
             this.GramUnitToLb = new DelegateCommand(
-                () => this.LbValue = this.CurrentLbUnit.FromImperialUnit(
+                () => this.LbValue = this.CurrentLbUnit.FromGramUnit(
                     this.CurrentGramUnit, this.GramValue));
 
             this.LbToGramUnit = new DelegateCommand(
-                () => this.GramValue = this.CurrentGramUnit.FromImperialUnit(
+                () => this.GramValue = this.CurrentGramUnit.FromLbUnit(
                     this.CurrentLbUnit, this.LbValue));
         }
     }
