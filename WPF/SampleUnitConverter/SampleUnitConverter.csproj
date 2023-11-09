@@ -58,9 +58,11 @@
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="DistanceUnit.cs" />
     <Compile Include="ImperialUnit.cs" />
+    <Compile Include="LbUnit.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="MetricUnit.cs" />
     <Compile Include="ViewModel.cs" />
+    <Compile Include="GramUnit.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
