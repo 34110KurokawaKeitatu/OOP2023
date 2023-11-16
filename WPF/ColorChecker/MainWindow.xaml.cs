@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -23,15 +24,39 @@ namespace ColorChecker {
         }
 
         private void stacckBotonn_Click(object sender, RoutedEventArgs e) {
+            var colorlist = GetColorList();
             string format = String.Format("R {0} G {1} B {2}",redSlider.Value,greenSlider.Value,blueSlider.Value);
-            colorListbox.Items.Add(format);
+            var c = colorlist.FirstOrDefault(x => x.Color == ((SolidColorBrush)colerArea.Background).Color)?.Name ?? format;
+            MyColor color = new MyColor { Color = ((SolidColorBrush)colerArea.Background).Color, Name = c };
+
+            myColors.Add(color);
+            colorListbox.Items.Add(color.Name);
+
             
         }
         private void colorListbox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            var colorlist = GetColorList();
+            var a = colorListbox.SelectedItem.ToString();
+
+            foreach (var item in colorlist)
+            {
+                if( a == item.Name)
+                {
+                    rText.Text = item.Color.R.ToString();
+                    gText.Text = item.Color.G.ToString();
+                    bText.Text = item.Color.B.ToString();
+                }
+
+            }
+
             string[] Click = colorListbox.SelectedItem.ToString().Split(' ');
-            rText.Text = Click[1];
-            gText.Text = Click[3];
-            bText.Text = Click[5];
+            if(Click.Length > 4)
+            {
+                rText.Text = Click[1];
+                gText.Text = Click[3];
+                bText.Text = Click[5];
+            }
+         
         }
 
         private MyColor[] GetColorList() {
@@ -41,6 +66,14 @@ namespace ColorChecker {
         public class MyColor {
             public Color Color { get; set; }
             public string Name { get; set; }
+        }
+        List<MyColor> myColors = new List<MyColor>();
+
+        public class StackColor {
+            public int R { get; set; }
+            public int G { get; set; }
+            public int B { get; set; }
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -53,6 +86,8 @@ namespace ColorChecker {
             colerArea.Background = BUr;
 
         }
+
+        
     }
 
 }

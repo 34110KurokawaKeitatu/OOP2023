@@ -34,7 +34,7 @@
                     <DropShadowEffect Color="#FF3AD600" ShadowDepth="1"/>
                 </Slider.Effect>
             </Slider>
-            <Slider x:Name="blueSlider" Grid.Column="1" Margin="0,0,0,10" Grid.Row="2" VerticalAlignment="Bottom" TickPlacement="TopLeft" Maximum="255" BorderThickness="2,0,0,0" ValueChanged="Slider_ValueChanged" IsSelectionRangeEnabled="True">
+            <Slider x:Name="blueSlider" Grid.Column="1" Margin="0,0,0,10" Grid.Row="2" VerticalAlignment="Bottom" TickPlacement="TopLeft" Maximum="255" BorderThickness="2,0,0,0" ValueChanged="Slider_ValueChanged" IsSelectionRangeEnabled="True" IsSnapToTickEnabled="True">
                 <Slider.Effect>
                     <DropShadowEffect ShadowDepth="1" Color="#FF1533F3"/>
                 </Slider.Effect>
