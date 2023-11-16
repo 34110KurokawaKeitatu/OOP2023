@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace WheghtConverter.Properties {
+namespace VisibilityConverter.Properties {
     /// <summary>
     ///   ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
     /// </summary>
@@ -40,7 +40,7 @@ namespace WheghtConverter.Properties {
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WheghtConverter.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VisibilityConverter.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
