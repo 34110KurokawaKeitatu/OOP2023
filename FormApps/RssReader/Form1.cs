@@ -32,6 +32,7 @@ namespace RssReader {
         int num = 0;
         ToolTip ToolTips;
         private void btGet_Load(object sender, EventArgs e) {
+
             ToolTips = new ToolTip();
 
             ToolTips.InitialDelay = 0;
@@ -99,16 +100,23 @@ namespace RssReader {
         }
 
         private void btFavorite_Click(object sender, EventArgs e) {
-            if (!ItemDatas.ContainsKey(ToLink[num].link) || !ItemDatas.ContainsValue(ToLink[num].Title))
+
+            try
             {
-                wbBrowser.Navigate(ToLink[lbRssTitle.SelectedIndex].link);
-                ItemDatas.Add(wbBrowser.Url.ToString(), lbRssTitle.SelectedItem.ToString());
+                if (!ItemDatas.ContainsKey(ToLink[num].link) || !ItemDatas.ContainsValue(ToLink[num].Title))
+                {
+
+
+                    wbBrowser.Navigate(ToLink[lbRssTitle.SelectedIndex].link);
+                    ItemDatas.Add(wbBrowser.Url.ToString(), lbRssTitle.SelectedItem.ToString());
+
+                }
+                else
+                {
+                    return;
+                }
             }
-            else
-            {
-                return;
-            }
-            
+            catch { }
 
         }
         private void btIt_Click(object sender, EventArgs e) {
@@ -169,10 +177,14 @@ namespace RssReader {
             flg = 1;
         }
 
-        //記事を表示
+        //選択した記事を表示
         public void Viewarticle() {
             num = lbRssTitle.SelectedIndex;
-            wbBrowser.Navigate(ToLink[num].link);
+            try
+            {
+                wbBrowser.Navigate(ToLink[num].link);
+            }
+            catch { }
         }
 
         //お気に入りに居れた記事をwebBrowserに表示
@@ -184,7 +196,10 @@ namespace RssReader {
                 UrlsDatas.Add(plus,item.Key);
                 plus++;
             }
-            wbBrowser.Navigate(UrlsDatas[lbRssTitle.SelectedIndex]);
+            try
+            {
+                wbBrowser.Navigate(UrlsDatas[lbRssTitle.SelectedIndex]);
+            }catch { }
             UrlsDatas.Clear();
             plus = 0;
         }

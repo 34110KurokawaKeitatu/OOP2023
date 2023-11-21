@@ -23,7 +23,11 @@ namespace VisibilityConverter {
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
-            Resources["ButtonBrushKey"] = new SolidColorBrush(Colors.Pink);
+            Resources["ButtonBrushKey2"] = new SolidColorBrush(Colors.LightGreen);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+            cbColors.SelectedIndex = 0;
         }
     }
 }

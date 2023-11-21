@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0B808A4-0456-4B46-B67E-2D95461AFF27}</ProjectGuid>
+    <ProjectGuid>{8D4662EF-190F-4880-9A67-55DE9E26467C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>VisibilityConverter</RootNamespace>
     <AssemblyName>VisibilityConverter</AssemblyName>
@@ -63,7 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BooleanToVisbilityConverter.cs" />
+    <Compile Include="BooleanToVisibilityConverter.cs" />
     <Compile Include="ColorViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

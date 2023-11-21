@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VisibilityConverter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="250" Width="300" Background="Beige" Loaded="Window_Loaded">
     <Window.Resources>
         <DataTemplate DataType="{x:Type local:ColorViewModel}">
             <StackPanel Orientation="Horizontal">
-                <Rectangle Width="12" Height="12">
-                    <Rectangle.Fill>
+                <Border Width="20" Height="20" Margin="5,0" BorderThickness="1" BorderBrush="Black">
+                    <Border.Background>
                         <SolidColorBrush Color="{Binding Color}"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-                <TextBlock Margin="10" />
+                    </Border.Background>
+                </Border>
+                <TextBlock Margin="2" Text="{Binding Name}" FontSize="14"/>
             </StackPanel>
+            
         </DataTemplate>
-        <!--<SolidColorBrush x:Key="ButtonBrushKey" Color="Aqua"/>-->
+
         <ControlTemplate x:Key="ButtonBaseControlTemplate1" TargetType="{x:Type ButtonBase}">
-            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="50">
+            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="50,0,50,0" Opacity="0.5">
                 <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
             </Border>
             <ControlTemplate.Triggers>
@@ -47,22 +48,21 @@
         </ControlTemplate>
     </Window.Resources>
     <StackPanel>
-
         <StackPanel.Resources>
-            <BooleanToVisibilityConverter x:Key="BooleanToVisbilityConverter"/>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         </StackPanel.Resources>
 
         <CheckBox x:Name="CheckBox" Content="設定大項目"/>
-        <StackPanel Visibility="{Binding IsChecked,ElementName=CheckBox,
-            Converter={StaticResource BooleanToVisbilityConverter}}"
-            Margin="20,0,0,0" >
-            <RadioButton Content="設定小項目1"/>
-            <RadioButton Content="設定小項目2"/>
-            <RadioButton Content="設定小項目3"/>
+        <StackPanel Visibility="{Binding IsChecked, ElementName=CheckBox,
+            Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Margin="20,0,0,0">
+            <RadioButton Content="設定小項目１"/>
+            <RadioButton Content="設定小項目２"/>
+            <RadioButton Content="設定小項目３"/>
         </StackPanel>
-        <Button Margin="10" Content="ボタン1" Background="{DynamicResource ButtonBrushKey}" Template="{DynamicResource ButtonBaseControlTemplate1}"/>
-        <Button Margin="10" Content="ボタン2" Background="{StaticResource ButtonBrushKey}"/>
+        <Button Margin="10" Content="ボタン１" Background="{DynamicResource ButtonBrushKey}" Template="{DynamicResource ButtonBaseControlTemplate1}"/>
+        <Button Margin="10" Content="ボタン２" Background="{StaticResource ButtonBrushKey}"/>
         <Button Margin="10" Content="リソース変更" Click="Button_Click"/>
-        <ComboBox ItemsSource="{x:Static local:ColorViewModel.ColorList}"/>
+        <ComboBox x:Name="cbColors" ItemsSource="{x:Static local:ColorViewModel.ColorList}"/>
     </StackPanel>
 </Window>
