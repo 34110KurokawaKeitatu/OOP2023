@@ -46,7 +46,7 @@ namespace RssReader {
             this.tbUrl.BackColor = System.Drawing.Color.White;
             this.tbUrl.Font = new System.Drawing.Font("BIZ UDPゴシック", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbUrl.ForeColor = System.Drawing.Color.Black;
-            this.tbUrl.Location = new System.Drawing.Point(49, 32);
+            this.tbUrl.Location = new System.Drawing.Point(49, 12);
             this.tbUrl.Multiline = true;
             this.tbUrl.Name = "tbUrl";
             this.tbUrl.Size = new System.Drawing.Size(1207, 37);
@@ -55,7 +55,7 @@ namespace RssReader {
             // btGetUlr
             // 
             this.btGetUlr.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.btGetUlr.Location = new System.Drawing.Point(1288, 32);
+            this.btGetUlr.Location = new System.Drawing.Point(1288, 12);
             this.btGetUlr.Name = "btGetUlr";
             this.btGetUlr.Size = new System.Drawing.Size(39, 37);
             this.btGetUlr.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace RssReader {
             // 
             this.lbRssTitle.FormattingEnabled = true;
             this.lbRssTitle.ItemHeight = 12;
-            this.lbRssTitle.Location = new System.Drawing.Point(49, 109);
+            this.lbRssTitle.Location = new System.Drawing.Point(49, 89);
             this.lbRssTitle.Name = "lbRssTitle";
             this.lbRssTitle.Size = new System.Drawing.Size(1278, 136);
             this.lbRssTitle.TabIndex = 2;
@@ -75,16 +75,16 @@ namespace RssReader {
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Location = new System.Drawing.Point(49, 251);
+            this.wbBrowser.Location = new System.Drawing.Point(49, 231);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
             this.wbBrowser.ScriptErrorsSuppressed = true;
-            this.wbBrowser.Size = new System.Drawing.Size(1278, 364);
+            this.wbBrowser.Size = new System.Drawing.Size(1278, 404);
             this.wbBrowser.TabIndex = 3;
             // 
             // tbUlrBox
             // 
-            this.tbUlrBox.Location = new System.Drawing.Point(49, 621);
+            this.tbUlrBox.Location = new System.Drawing.Point(49, 641);
             this.tbUlrBox.Name = "tbUlrBox";
             this.tbUlrBox.Size = new System.Drawing.Size(1278, 19);
             this.tbUlrBox.TabIndex = 4;
@@ -93,7 +93,7 @@ namespace RssReader {
             // 
             this.TheEnd.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.TheEnd.ForeColor = System.Drawing.Color.Red;
-            this.TheEnd.Location = new System.Drawing.Point(1252, 32);
+            this.TheEnd.Location = new System.Drawing.Point(1252, 12);
             this.TheEnd.Name = "TheEnd";
             this.TheEnd.Size = new System.Drawing.Size(36, 37);
             this.TheEnd.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace RssReader {
             // btUp
             // 
             this.btUp.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.btUp.Location = new System.Drawing.Point(1333, 109);
+            this.btUp.Location = new System.Drawing.Point(1333, 89);
             this.btUp.Name = "btUp";
             this.btUp.Size = new System.Drawing.Size(43, 57);
             this.btUp.TabIndex = 6;
@@ -115,7 +115,7 @@ namespace RssReader {
             // btDown
             // 
             this.btDown.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.btDown.Location = new System.Drawing.Point(1333, 188);
+            this.btDown.Location = new System.Drawing.Point(1333, 168);
             this.btDown.Name = "btDown";
             this.btDown.Size = new System.Drawing.Size(43, 57);
             this.btDown.TabIndex = 7;
@@ -127,7 +127,7 @@ namespace RssReader {
             // 
             this.btFavorite.BackColor = System.Drawing.Color.Orange;
             this.btFavorite.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btFavorite.Location = new System.Drawing.Point(1195, 75);
+            this.btFavorite.Location = new System.Drawing.Point(1195, 55);
             this.btFavorite.Name = "btFavorite";
             this.btFavorite.Size = new System.Drawing.Size(61, 37);
             this.btFavorite.TabIndex = 8;
@@ -140,7 +140,7 @@ namespace RssReader {
             this.btIt.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btIt.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.btIt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btIt.Location = new System.Drawing.Point(219, 75);
+            this.btIt.Location = new System.Drawing.Point(219, 55);
             this.btIt.Name = "btIt";
             this.btIt.Size = new System.Drawing.Size(61, 37);
             this.btIt.TabIndex = 13;
@@ -153,7 +153,7 @@ namespace RssReader {
             this.btSport.BackColor = System.Drawing.Color.Blue;
             this.btSport.Font = new System.Drawing.Font("MS UI Gothic", 15F);
             this.btSport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btSport.Location = new System.Drawing.Point(164, 75);
+            this.btSport.Location = new System.Drawing.Point(164, 55);
             this.btSport.Name = "btSport";
             this.btSport.Size = new System.Drawing.Size(61, 37);
             this.btSport.TabIndex = 14;
@@ -166,7 +166,7 @@ namespace RssReader {
             this.btBusiness.BackColor = System.Drawing.Color.Magenta;
             this.btBusiness.Font = new System.Drawing.Font("MS UI Gothic", 16F);
             this.btBusiness.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btBusiness.Location = new System.Drawing.Point(107, 75);
+            this.btBusiness.Location = new System.Drawing.Point(107, 55);
             this.btBusiness.Name = "btBusiness";
             this.btBusiness.Size = new System.Drawing.Size(61, 37);
             this.btBusiness.TabIndex = 15;
@@ -179,7 +179,7 @@ namespace RssReader {
             this.btScience.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btScience.Font = new System.Drawing.Font("MS UI Gothic", 16F);
             this.btScience.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btScience.Location = new System.Drawing.Point(49, 75);
+            this.btScience.Location = new System.Drawing.Point(49, 55);
             this.btScience.Name = "btScience";
             this.btScience.Size = new System.Drawing.Size(61, 37);
             this.btScience.TabIndex = 16;
@@ -191,7 +191,7 @@ namespace RssReader {
             // 
             this.btFF10.BackColor = System.Drawing.Color.Gold;
             this.btFF10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btFF10.Location = new System.Drawing.Point(1252, 75);
+            this.btFF10.Location = new System.Drawing.Point(1252, 55);
             this.btFF10.Name = "btFF10";
             this.btFF10.Size = new System.Drawing.Size(75, 37);
             this.btFF10.TabIndex = 17;
