@@ -39,6 +39,10 @@ namespace RssReader {
             this.btBusiness = new System.Windows.Forms.Button();
             this.btScience = new System.Windows.Forms.Button();
             this.btFF10 = new System.Windows.Forms.Button();
+            this.btLocal = new System.Windows.Forms.Button();
+            this.btEntertainment = new System.Windows.Forms.Button();
+            this.btCar = new System.Windows.Forms.Button();
+            this.btGrandPegasus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbUrl
@@ -65,11 +69,12 @@ namespace RssReader {
             // 
             // lbRssTitle
             // 
+            this.lbRssTitle.Font = new System.Drawing.Font("BIZ UDPゴシック", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbRssTitle.FormattingEnabled = true;
-            this.lbRssTitle.ItemHeight = 12;
+            this.lbRssTitle.ItemHeight = 16;
             this.lbRssTitle.Location = new System.Drawing.Point(49, 89);
             this.lbRssTitle.Name = "lbRssTitle";
-            this.lbRssTitle.Size = new System.Drawing.Size(1278, 136);
+            this.lbRssTitle.Size = new System.Drawing.Size(1278, 132);
             this.lbRssTitle.TabIndex = 2;
             this.lbRssTitle.SelectedIndexChanged += new System.EventHandler(this.lbRssTitle_SelectedIndexChanged);
             // 
@@ -199,11 +204,68 @@ namespace RssReader {
             this.btFF10.UseVisualStyleBackColor = false;
             this.btFF10.Click += new System.EventHandler(this.btFF10_Click);
             // 
+            // btLocal
+            // 
+            this.btLocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btLocal.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.btLocal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btLocal.Location = new System.Drawing.Point(274, 55);
+            this.btLocal.Name = "btLocal";
+            this.btLocal.Size = new System.Drawing.Size(61, 37);
+            this.btLocal.TabIndex = 18;
+            this.btLocal.Text = "🗺";
+            this.btLocal.UseVisualStyleBackColor = false;
+            this.btLocal.Click += new System.EventHandler(this.btLocal_Click);
+            // 
+            // btEntertainment
+            // 
+            this.btEntertainment.BackColor = System.Drawing.Color.DarkViolet;
+            this.btEntertainment.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.btEntertainment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btEntertainment.Location = new System.Drawing.Point(332, 55);
+            this.btEntertainment.Name = "btEntertainment";
+            this.btEntertainment.Size = new System.Drawing.Size(61, 37);
+            this.btEntertainment.TabIndex = 19;
+            this.btEntertainment.Text = "👥";
+            this.btEntertainment.UseVisualStyleBackColor = false;
+            this.btEntertainment.Click += new System.EventHandler(this.btEntertainment_Click);
+            // 
+            // btCar
+            // 
+            this.btCar.BackColor = System.Drawing.Color.Crimson;
+            this.btCar.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.btCar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btCar.Location = new System.Drawing.Point(389, 55);
+            this.btCar.Name = "btCar";
+            this.btCar.Size = new System.Drawing.Size(61, 37);
+            this.btCar.TabIndex = 20;
+            this.btCar.Text = "🚙";
+            this.btCar.UseVisualStyleBackColor = false;
+            this.btCar.Click += new System.EventHandler(this.btCar_Click);
+            // 
+            // btGrandPegasus
+            // 
+            this.btGrandPegasus.BackColor = System.Drawing.Color.Blue;
+            this.btGrandPegasus.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.btGrandPegasus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btGrandPegasus.Location = new System.Drawing.Point(447, 55);
+            this.btGrandPegasus.Name = "btGrandPegasus";
+            this.btGrandPegasus.Size = new System.Drawing.Size(61, 37);
+            this.btGrandPegasus.TabIndex = 21;
+            this.btGrandPegasus.Text = "🐓";
+            this.btGrandPegasus.UseVisualStyleBackColor = false;
+            this.btGrandPegasus.Click += new System.EventHandler(this.btGrandPegasus_Click);
+            // 
             // btGet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1406, 672);
+            this.Controls.Add(this.btGrandPegasus);
+            this.Controls.Add(this.btCar);
+            this.Controls.Add(this.btEntertainment);
+            this.Controls.Add(this.btLocal);
             this.Controls.Add(this.btFF10);
             this.Controls.Add(this.btScience);
             this.Controls.Add(this.btBusiness);
@@ -242,6 +304,10 @@ namespace RssReader {
         private System.Windows.Forms.Button btBusiness;
         private System.Windows.Forms.Button btScience;
         private System.Windows.Forms.Button btFF10;
+        private System.Windows.Forms.Button btLocal;
+        private System.Windows.Forms.Button btEntertainment;
+        private System.Windows.Forms.Button btCar;
+        private System.Windows.Forms.Button btGrandPegasus;
     }
 }
 

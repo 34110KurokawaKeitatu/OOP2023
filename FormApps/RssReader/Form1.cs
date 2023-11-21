@@ -16,8 +16,11 @@ namespace RssReader {
         List<ItemData> ToLink = new List<ItemData>();
         Dictionary<string, string> ItemDatas = new Dictionary<string, string>();
         Dictionary<int, string> UrlsDatas = new Dictionary<int, string>();
+        ToolTip ToolTips;
         int flg = 0;
         int plus = 0;
+        int num = 0;
+
         class favoriteSet {
             public string Urls { get; set; }
             public string Titles { get; set; }
@@ -29,8 +32,6 @@ namespace RssReader {
                 return Titles;
             }
         }
-        int num = 0;
-        ToolTip ToolTips;
         private void btGet_Load(object sender, EventArgs e) {
 
             ToolTips = new ToolTip();
@@ -41,13 +42,16 @@ namespace RssReader {
 
             ToolTips.ShowAlways = true;
 
-           
             ToolTips.SetToolTip(btFavorite, "現在選択している記事をお気に入りに入れます");
             ToolTips.SetToolTip(btGetUlr, "検索");
             ToolTips.SetToolTip(btIt, "ITの記事を表示します");
             ToolTips.SetToolTip(btSport, "スポーツの記事を表示します");
             ToolTips.SetToolTip(btScience, "科学関連の記事を表示します");
             ToolTips.SetToolTip(btBusiness, "経済関連の記事を表示します");
+            ToolTips.SetToolTip(btLocal, "地域関連の記事を表示します");
+            ToolTips.SetToolTip(btGrandPegasus, "群馬TVの記事を表示します");
+            ToolTips.SetToolTip(btCar, "ベストモーターWEBの記事を表示します");
+            ToolTips.SetToolTip(btEntertainment, "エンターテインメント関連の記事を表示します");
             ToolTips.SetToolTip(btUp, "現在表示している記事の一つ上の記事を表示します");
             ToolTips.SetToolTip(btDown, "現在表示している記事の一つ下の記事を表示します");
             ToolTips.SetToolTip(btFF10, "お気に入りに登録した記事を表示します");
@@ -133,6 +137,28 @@ namespace RssReader {
             Summarize("https://news.yahoo.co.jp/rss/categories/business.xml");
             flg = 0;
         }
+        private void btScience_Click(object sender, EventArgs e) {
+            Summarize("https://news.yahoo.co.jp/rss/categories/science.xml");
+            flg = 0;
+        }
+        private void btLocal_Click(object sender, EventArgs e) {
+            Summarize("https://news.yahoo.co.jp/rss/topics/local.xml");
+            flg = 0;
+        }
+        private void btEntertainment_Click(object sender, EventArgs e) {
+            Summarize("https://news.yahoo.co.jp/rss/topics/entertainment.xml");
+            flg = 0;
+        }
+
+        private void btCar_Click(object sender, EventArgs e) {
+            Summarize("https://news.yahoo.co.jp/rss/media/bestcar/all.xml");
+            flg = 0;
+        }
+
+        private void btGrandPegasus_Click(object sender, EventArgs e) {
+            Summarize("https://news.yahoo.co.jp/rss/media/gtv/all.xml");
+            flg = 0;
+        }
         public void Summarize(string urls) {
             using (var wc = new WebClient())
             {
@@ -158,11 +184,6 @@ namespace RssReader {
                 catch (Exception) { }
 
             }
-        }
-
-        private void btScience_Click(object sender, EventArgs e) {
-            Summarize("https://news.yahoo.co.jp/rss/categories/science.xml");
-            flg = 0;
         }
 
         //登録した記事をlbRssTitleに表示
